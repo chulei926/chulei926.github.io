@@ -24,6 +24,14 @@ module.exports = {
                     'chapter2/02_安装TS'
                 ]
             },
+            {
+                title: 'TypeScript 常用语法1',
+                collapsable: true,
+                children: [
+                    'chapter3/01_初识TS',
+                    'chapter3/02_安装TS'
+                ]
+            },
         ]
     }
 }
