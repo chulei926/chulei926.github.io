@@ -12,6 +12,9 @@
 
     echo 'note.leichu.top' > CNAME
 
+    echo '12780596105928746199' > tencent8856338701795882262.txt
+
+
 # 提交 & 推送
 
     git init
