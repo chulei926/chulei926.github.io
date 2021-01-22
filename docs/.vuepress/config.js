@@ -32,7 +32,7 @@ module.exports = {
                 title: 'JAVA',
                 collapsable: true,
                 children: [{
-                        title: '源码',
+                        title: '源码1',
                         collapsable: true,
                         children: [
 
@@ -112,12 +112,28 @@ module.exports = {
 
                         ]
                     },
+                    {
+                        title: '常见问题',
+                        collapsable: true,
+                        children: [{
+                                title: 'jdk环境变量',
+                                collapsable: false,
+                                path: '/01-java/jdk环境变量.md'
+                            },
+                            {
+                                title: 'maven常用插件',
+                                collapsable: false,
+                                path: '/01-java/maven.md'
+                            },
+
+                        ]
+                    },
                 ]
             },
             {
-                title: 'Spring & SB & SC', // 标题
-                collapsable: true, // 下级列表不可折叠
-                children: [ // 下级列表
+                title: 'Spring & SB & SC',
+                collapsable: true,
+                children: [
 
                 ]
             },
@@ -185,6 +201,56 @@ module.exports = {
                 ]
             },
             {
+                title: 'Docker',
+                collapsable: true,
+                children: [{
+                        title: '基础',
+                        collapsable: false,
+                        path: '/05-运维/docker/000-docker基础.md'
+                    },
+                    {
+                        title: '安装',
+                        collapsable: false,
+                        path: '/05-运维/docker/001-docker安装.md'
+                    },
+                    {
+                        title: '搭建私有仓库',
+                        collapsable: false,
+                        path: '/05-运维/docker/003-docker搭建私有仓库.md'
+                    },
+                    {
+                        title: 'docker命令',
+                        collapsable: false,
+                        path: '/05-运维/docker/004-docker命令.md'
+                    },
+                    {
+                        title: 'docker常用命令',
+                        collapsable: false,
+                        path: '/05-运维/docker/005-docker常用命令.md'
+                    },
+                    {
+                        title: 'Dockerfile指令',
+                        collapsable: false,
+                        path: '/05-运维/docker/006-Dockerfile指令.md'
+                    },
+                    {
+                        title: 'Dockerfile各种构建',
+                        collapsable: false,
+                        path: '/05-运维/docker/007-Dockerfile各种构建.md'
+                    },
+                    {
+                        title: 'java-war包部署',
+                        collapsable: false,
+                        path: '/05-运维/docker/008-java-war包部署.md'
+                    },
+                    {
+                        title: 'nexus私服安装',
+                        collapsable: false,
+                        path: '/05-运维/docker/009-nexus私服安装.md'
+                    },
+                ]
+            },
+            {
                 title: 'Angular',
                 collapsable: true,
                 children: [
@@ -246,17 +312,43 @@ module.exports = {
                 ]
             },
             {
-                title: '常用脚本',
+                title: '正则表达式',
                 collapsable: true,
-                children: [
+                children: [{
+                        title: '常见元字符',
+                        collapsable: false,
+                        path: '/other/正则表达式/常用元字符.md'
+                    },
+                    {
+                        title: '常用表达式',
+                        collapsable: false,
+                        path: '/other/正则表达式/常用表达式.md'
+                    },
 
                 ]
             },
             {
-                title: '正则表达式',
+                title: '杂货铺',
                 collapsable: true,
-                children: [
-
+                children: [{
+                        title: '杂货铺',
+                        collapsable: false,
+                        path: '/other/杂货铺.md'
+                    }, {
+                        title: 'git',
+                        collapsable: false,
+                        path: '/other/git.md'
+                    },
+                    {
+                        title: '常用shelll',
+                        collapsable: false,
+                        path: '/other/常用shell脚本.md'
+                    },
+                    {
+                        title: '常用cmd',
+                        collapsable: false,
+                        path: '/other/常用cmd脚本.md'
+                    },
                 ]
             },
         ]
