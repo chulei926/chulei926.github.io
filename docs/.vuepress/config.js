@@ -32,6 +32,14 @@ module.exports = {
                     'chapter3/02_安装TS'
                 ]
             },
+            {
+                title: '2222',
+                collapsable: true,
+                children: [
+                    'chapter3/01_初识TS',
+                    'chapter3/02_安装TS'
+                ]
+            },
         ]
     }
 }
