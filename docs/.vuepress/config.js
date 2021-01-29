@@ -182,8 +182,87 @@ module.exports = {
             {
                 title: 'Linux',
                 collapsable: true,
-                children: [
+                children: [{
+                        title: '基础命令',
+                        collapsable: false,
+                        path: '/04-运维/Linux/001-linux基本命令.md'
+                    },
+                    {
+                        title: '用户和组',
+                        collapsable: false,
+                        path: '/04-运维/Linux/002-linux用户和组.md'
+                    },
+                    {
+                        title: 'ssh证书登录',
+                        collapsable: false,
+                        path: '/04-运维/Linux/003-ssh证书登录.md'
+                    },
+                    {
+                        title: 'linux常用工具安装',
+                        collapsable: false,
+                        path: '/04-运维/Linux/004-linux常用工具安装.md'
+                    },
+                    {
+                        title: 'centos7修改网卡名称',
+                        collapsable: false,
+                        path: '/04-运维/Linux/005-centos7修改网卡名称.md'
+                    },
+                    {
+                        title: 'iptables',
+                        collapsable: false,
+                        path: '/04-运维/Linux/006-iptables.md'
+                    },
+                    {
+                        title: 'JDK',
+                        collapsable: false,
+                        path: '/04-运维/Linux/007-JDK.md'
+                    },
+                    {
+                        title: 'xshell配色设置',
+                        collapsable: false,
+                        path: '/04-运维/Linux/008-xshell配色设置.md'
+                    },
+                    {
+                        title: '磁盘常用命令',
+                        collapsable: false,
+                        path: '/04-运维/Linux/009-磁盘常用命令.md'
+                    },
+                    {
+                        title: '静态IP',
+                        collapsable: false,
+                        path: '/04-运维/Linux/010-静态IP.md'
+                    },
+                    {
+                        title: 'openvpn客户端安装',
+                        collapsable: false,
+                        path: '/04-运维/Linux/011-openvpn客户端安装.md'
+                    },
 
+                    {
+                        title: 'centos7使用阿里源',
+                        collapsable: false,
+                        path: '/04-运维/Linux/012-centos7使用阿里源.md'
+                    },
+                    {
+                        title: '内存占用高',
+                        collapsable: false,
+                        path: '/04-运维/Linux/013-内存占用高.md'
+                    },
+                    {
+                        title: 'vim',
+                        collapsable: false,
+                        path: '/04-运维/Linux/014-vim.md'
+                    },
+                    {
+                        title: 'journalctl',
+                        collapsable: false,
+                        path: '/04-运维/Linux/015-journalctl.md'
+                    },
+                    {
+                        title: '性能实时监控工具',
+                        collapsable: false,
+                        path: '/04-运维/Linux/Linux性能实时监控工具.md'
+                    },
                 ]
             },
             {
@@ -206,47 +285,47 @@ module.exports = {
                 children: [{
                         title: '基础',
                         collapsable: false,
-                        path: '/05-运维/docker/000-docker基础.md'
+                        path: '/04-运维/docker/000-docker基础.md'
                     },
                     {
                         title: '安装',
                         collapsable: false,
-                        path: '/05-运维/docker/001-docker安装.md'
+                        path: '/04-运维/docker/001-docker安装.md'
                     },
                     {
                         title: '搭建私有仓库',
                         collapsable: false,
-                        path: '/05-运维/docker/003-docker搭建私有仓库.md'
+                        path: '/04-运维/docker/003-docker搭建私有仓库.md'
                     },
                     {
                         title: 'docker命令',
                         collapsable: false,
-                        path: '/05-运维/docker/004-docker命令.md'
+                        path: '/04-运维/docker/004-docker命令.md'
                     },
                     {
                         title: 'docker常用命令',
                         collapsable: false,
-                        path: '/05-运维/docker/005-docker常用命令.md'
+                        path: '/04-运维/docker/005-docker常用命令.md'
                     },
                     {
                         title: 'Dockerfile指令',
                         collapsable: false,
-                        path: '/05-运维/docker/006-Dockerfile指令.md'
+                        path: '/04-运维/docker/006-Dockerfile指令.md'
                     },
                     {
                         title: 'Dockerfile各种构建',
                         collapsable: false,
-                        path: '/05-运维/docker/007-Dockerfile各种构建.md'
+                        path: '/04-运维/docker/007-Dockerfile各种构建.md'
                     },
                     {
                         title: 'java-war包部署',
                         collapsable: false,
-                        path: '/05-运维/docker/008-java-war包部署.md'
+                        path: '/04-运维/docker/008-java-war包部署.md'
                     },
                     {
                         title: 'nexus私服安装',
                         collapsable: false,
-                        path: '/05-运维/docker/009-nexus私服安装.md'
+                        path: '/04-运维/docker/009-nexus私服安装.md'
                     },
                 ]
             },
