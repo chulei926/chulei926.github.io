@@ -1,6 +1,6 @@
 # dos命令备份文件
 
-```bat
+```shell
 title 'Batch Backup'
 set date=%Date:~0,4%%Date:~5,2%%Date:~8,2%%Time:~0,2%%Time:~3,2%
 xcopy "%~dp0\test-job" "%~dp0\backup\%date%\" /e/y
@@ -10,7 +10,7 @@ pause
 
 # cmd启动脚本
 
-```bat
+```shell
 @echo off
 title ctb-gen-job
 SET CLASSPATH=
@@ -33,7 +33,7 @@ java -Xms1g -Xmx1g -Dfile.encoding=GBK -classpath "%CLASSPATH%" %APPNAME% start
 
 # 批量执行.exe
 
-```bat
+```shell
 @echo off
 echo Starting eclipse...
 start "" "D:\eclipse\jee-neon\eclipse\eclipse.exe"
@@ -44,7 +44,7 @@ exit
 
 # 打开指定网页
 
-```bat
+```shell
 path=%path%; C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 start chrome http://in.zhixue.com/rwgl/dashboard
 ```
@@ -60,7 +60,7 @@ http://gs.mizss.com/cosfuture/mcard-webapp.git
 ```
 
 clone.bat
-```bat
+```shell
 chcp 65001
 @echo off
 
@@ -72,7 +72,7 @@ pause
 
 ### 批量 pull
 
-```bat
+```shell
 chcp 65001
 echo off & color 0A
 
