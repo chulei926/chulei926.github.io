@@ -350,9 +350,11 @@ module.exports = {
             {
                 title: 'Angular',
                 collapsable: true,
-                children: [
-
-                ]
+                children: [{
+                    title: 'cli',
+                    collapsable: false,
+                    path: '/03-前端/Angular/cli.md'
+                }]
             },
             {
                 title: 'Vue',
