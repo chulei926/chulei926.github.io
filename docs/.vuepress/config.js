@@ -161,9 +161,11 @@ module.exports = {
             {
                 title: 'Redis',
                 collapsable: true,
-                children: [
-
-                ]
+                children: [{
+                    title: '配置文件详解',
+                    collapsable: false,
+                    path: '/02-数据库/redis/001-redis配置文件详解.md'
+                }]
             },
             {
                 title: 'MongoDB',
