@@ -15,7 +15,7 @@ module.exports = {
         ]
     ],
     themeConfig: { // 主题配置
-        logo: 'favicon.ico',
+        logo: '/favicon.ico',
         // displayAllHeaders: true, // 默认值：false
         lastUpdated: '更新时间', // string | boolean
         markdown: {
@@ -32,7 +32,7 @@ module.exports = {
                 title: 'JAVA',
                 collapsable: true,
                 children: [{
-                        title: '源码1',
+                        title: '源码',
                         collapsable: true,
                         children: [
 
@@ -173,10 +173,26 @@ module.exports = {
                 ]
             },
             {
-                title: 'ELK',
+                title: 'elasticsearch',
                 collapsable: true,
-                children: [
-
+                children: [{
+                        title: 'es集群部署',
+                        collapsable: false,
+                        path: '/02-数据库/elasticsearch/001-es集群部署.md'
+                    },
+                    {
+                        title: 'IK分词器安装',
+                        collapsable: false,
+                        path: '/02-数据库/elasticsearch/002-IK分词器安装.md'
+                    }, {
+                        title: '常用查询',
+                        collapsable: false,
+                        path: '/02-数据库/elasticsearch/003-常用查询.md'
+                    }, {
+                        title: 'mapping样例',
+                        collapsable: false,
+                        path: '/02-数据库/elasticsearch/004-mapping样例.md'
+                    }
                 ]
             },
             {
