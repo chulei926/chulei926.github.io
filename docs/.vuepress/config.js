@@ -286,9 +286,39 @@ module.exports = {
             {
                 title: 'Nginx',
                 collapsable: true,
-                children: [
-
-                ]
+                children: [{
+                    title: '安装脚本',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/01-安装脚本.md'
+                }, {
+                    title: 'Nginx配置',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/02-Nginx配置.md'
+                }, {
+                    title: 'Nginx配置-main',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/03-Nginx配置-main.md'
+                }, {
+                    title: 'Nginx配置-event',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/04-Nginx配置-event.md'
+                }, {
+                    title: 'Nginx配置-http',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/05-Nginx配置-http.md'
+                }, {
+                    title: '499状态码问题',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/499状态码问题.md'
+                }, {
+                    title: 'lua限流',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/lua限流.md'
+                }, {
+                    title: 'OpenResty',
+                    collapsable: false,
+                    path: '/04-运维/Nginx/OpenResty.md'
+                }]
             },
             {
                 title: 'Tomcat',
