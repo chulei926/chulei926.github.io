@@ -1,6 +1,10 @@
 # chulei926.github.io
 笔记本
 
+# 运行
+
+    npm run dev
+
 # 构建
     npm run build
 
