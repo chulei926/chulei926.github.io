@@ -378,12 +378,33 @@ module.exports = {
                 ]
             },
             {
+                title: '前端',
+                collapsable: true,
+                children: [{
+                    title: 'npm常用命令',
+                    collapsable: false,
+                    path: '/03-前端/npm/npm常用命令.md'
+                }, {
+                    title: 'npm私服',
+                    collapsable: false,
+                    path: '/03-前端/npm/npm私服.md'
+                }]
+            },
+            {
                 title: 'Angular',
                 collapsable: true,
                 children: [{
                     title: 'cli',
                     collapsable: false,
                     path: '/03-前端/Angular/cli.md'
+                }, {
+                    title: 'ng6升级至ng10',
+                    collapsable: false,
+                    path: '/03-前端/Angular/ng6升级至ng10.md'
+                }, {
+                    title: '创建&部署library到npm私服',
+                    collapsable: false,
+                    path: '/03-前端/Angular/创建&部署library到npm私服.md'
                 }]
             },
             {
