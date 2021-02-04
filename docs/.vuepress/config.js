@@ -128,6 +128,26 @@ module.exports = {
 
                         ]
                     },
+                    {
+                        title: 'Tomcat',
+                        collapsable: true,
+                        children: [{
+                                title: 'tomcat内存',
+                                collapsable: false,
+                                path: '/01-java/Tomcat/01-tomcat内存.md'
+                            },
+                            {
+                                title: 'tomcat运行窗口标题',
+                                collapsable: false,
+                                path: '/01-java/Tomcat/02-tomcat运行窗口标题.md'
+                            },
+                            {
+                                title: 'tomcat访问日志',
+                                collapsable: false,
+                                path: '/01-java/Tomcat/03-tomcat访问日志.md'
+                            },
+                        ]
+                    },
                 ]
             },
             {
@@ -319,13 +339,6 @@ module.exports = {
                     collapsable: false,
                     path: '/04-运维/Nginx/OpenResty.md'
                 }]
-            },
-            {
-                title: 'Tomcat',
-                collapsable: true,
-                children: [
-
-                ]
             },
             {
                 title: 'Docker',
