@@ -14,13 +14,13 @@ module.exports = {
             }
         ]
     ],
+    markdown: {
+        lineNumbers: true
+    },
     themeConfig: { // 主题配置
         logo: '/favicon.ico',
         // displayAllHeaders: true, // 默认值：false
         lastUpdated: '更新时间', // string | boolean
-        markdown: {
-            lineNumbers: true
-        },
         nav: [{
             text: 'github',
             link: 'https://github.com/chulei926',
