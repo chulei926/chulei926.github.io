@@ -15,7 +15,8 @@ module.exports = {
         ]
     ],
     markdown: {
-        lineNumbers: true
+        lineNumbers: true,
+        extractHeaders: []
     },
     themeConfig: { // 主题配置
         logo: '/favicon.ico',
@@ -160,8 +161,38 @@ module.exports = {
             {
                 title: 'Dubbo',
                 collapsable: true,
-                children: [
-
+                children: [{
+                        title: 'zk安装',
+                        collapsable: false,
+                        path: '/01-java/dubbo/001-zk安装.md'
+                    },
+                    {
+                        title: 'dubbo调试',
+                        collapsable: false,
+                        path: '/01-java/dubbo/002-dubbo调试.md'
+                    },
+                    {
+                        title: '修改线程池',
+                        collapsable: false,
+                        path: '/01-java/dubbo/003-修改线程池.md'
+                    },
+                    {
+                        title: 'dubbo超时设置',
+                        collapsable: false,
+                        path: '/01-java/dubbo/004-dubbo超时设置.md'
+                    }, {
+                        title: 'src01-SPI',
+                        collapsable: false,
+                        path: '/01-java/dubbo/src01-SPI.md'
+                    }, {
+                        title: 'src02-JavaSPI',
+                        collapsable: false,
+                        path: '/01-java/dubbo/src02-JavaSPI.md'
+                    }, {
+                        title: 'src03-DubboSPI',
+                        collapsable: false,
+                        path: '/01-java/dubbo/src03-DubboSPI.md'
+                    }
                 ]
             },
             {
