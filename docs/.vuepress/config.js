@@ -149,6 +149,46 @@ module.exports = {
                             },
                         ]
                     },
+                    {
+                        title: 'bio&nio&netty',
+                        collapsable: true,
+                        children: [{
+                                title: 'bio-demo',
+                                collapsable: false,
+                                path: '/01-java/bio&nio&netty/01-bio-demo.md'
+                            },
+                            {
+                                title: 'nio-demo',
+                                collapsable: false,
+                                path: '/01-java/bio&nio&netty/02-nio-demo.md'
+                            },
+                            {
+                                title: 'nio-group_chat-demo',
+                                collapsable: false,
+                                path: '/01-java/bio&nio&netty/03-nio-group_chat-demo.md'
+                            },
+                            {
+                                title: 'IO模型',
+                                collapsable: false,
+                                path: '/01-java/bio&nio&netty/04-IO模型.md'
+                            },
+                            {
+                                title: 'nio',
+                                collapsable: false,
+                                path: '/01-java/bio&nio&netty/05-nio.md'
+                            },
+                            {
+                                title: 'nio-Scatter&Gather',
+                                collapsable: false,
+                                path: '/01-java/bio&nio&netty/06-nio-Scatter&Gather.md'
+                            },
+                            {
+                                title: 'Reactor模式',
+                                collapsable: false,
+                                path: '/01-java/bio&nio&netty/07-Reactor模式.md'
+                            },
+                        ]
+                    },
                 ]
             },
             {
