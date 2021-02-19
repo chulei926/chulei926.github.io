@@ -352,8 +352,71 @@ module.exports = {
             {
                 title: 'MongoDB',
                 collapsable: true,
-                children: [
-
+                children: [{
+                        title: '单实例安装',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/001-mongodb单实例安装.md'
+                    },
+                    {
+                        title: '配置文件详解',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/002-mongodb配置文件详解.md'
+                    },
+                    {
+                        title: '副本集模式原理',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/003-mongodb副本集模式原理.md'
+                    },
+                    {
+                        title: '副本集模式配置',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/004-mongodb副本集模式配置.md'
+                    },
+                    {
+                        title: 'ObjectId',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/005-mongodb ObjectId.md'
+                    },
+                    {
+                        title: 'oplog',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/006-mongodb oplog.md'
+                    },
+                    {
+                        title: 'shell命令',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/007-mongodb shell命令.md'
+                    },
+                    {
+                        title: '高级查询',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/008-mongodb 高级查询.md'
+                    },
+                    {
+                        title: 'java',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/009-mongodb-java.md'
+                    },
+                    {
+                        title: 'spring',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/010-mongodb-spring.md'
+                    },
+                    {
+                        title: 'Dockerfile安装MongoDB',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/011-Dockerfile安装MongoDB.md'
+                    },
+                    {
+                        title: '常用命令',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/012-常用命令.md'
+                    },
+                    {
+                        title: '数组更新',
+                        collapsable: false,
+                        path: '/02-数据库/mongodb/013-数组更新.md'
+                    }
                 ]
             },
             {
