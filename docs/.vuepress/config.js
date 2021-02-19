@@ -303,8 +303,41 @@ module.exports = {
             {
                 title: 'MySQL',
                 collapsable: true,
-                children: [
-
+                children: [{
+                        title: 'mysql安装-windows',
+                        collapsable: false,
+                        path: '/02-数据库/mysql/001-mysql安装-windows.md'
+                    },
+                    {
+                        title: 'mysql安装-linux',
+                        collapsable: false,
+                        path: '/02-数据库/mysql/002-mysql安装-linux.md'
+                    },
+                    {
+                        title: 'mysql主从复制',
+                        collapsable: false,
+                        path: '/02-数据库/mysql/003-mysql主从复制.md'
+                    },
+                    {
+                        title: 'mysql数据类型',
+                        collapsable: false,
+                        path: '/02-数据库/mysql/004-mysql数据类型.md'
+                    },
+                    {
+                        title: '常用SQL',
+                        collapsable: false,
+                        path: '/02-数据库/mysql/005-常用SQL.md'
+                    },
+                    {
+                        title: '数据库SQL',
+                        collapsable: false,
+                        path: '/02-数据库/mysql/006-数据库SQL.md'
+                    },
+                    {
+                        title: '数据表SQL',
+                        collapsable: false,
+                        path: '/02-数据库/mysql/007-数据表SQL.md'
+                    }
                 ]
             },
             {
