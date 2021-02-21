@@ -20,7 +20,7 @@ module.exports = {
     },
     themeConfig: { // 主题配置
         // logo: '/favicon.ico',
-        logo: '/pen.ico',
+        logo: '/favicon.ico',
         lastUpdated: '更新时间', // string | boolean
         nav: [{
             text: 'github',
