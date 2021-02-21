@@ -19,8 +19,8 @@ module.exports = {
         extractHeaders: []
     },
     themeConfig: { // 主题配置
-        logo: '/favicon.ico',
-        // displayAllHeaders: true, // 默认值：false
+        // logo: '/favicon.ico',
+        logo: '/pen.svg',
         lastUpdated: '更新时间', // string | boolean
         nav: [{
             text: 'github',
@@ -613,20 +613,60 @@ module.exports = {
                         collapsable: false,
                         path: '/04-运维/docker/009-nexus私服安装.md'
                     },
+                    {
+                        title: 'pandoc加入docker',
+                        collapsable: false,
+                        path: '/04-运维/docker/010-pandoc加入docker.md'
+                    },
                 ]
             },
             {
                 title: '前端',
                 collapsable: true,
                 children: [{
-                    title: 'npm常用命令',
-                    collapsable: false,
-                    path: '/03-前端/npm/npm常用命令.md'
-                }, {
-                    title: 'npm私服',
-                    collapsable: false,
-                    path: '/03-前端/npm/npm私服.md'
-                }]
+                        title: 'npm常用命令',
+                        collapsable: false,
+                        path: '/03-前端/npm/npm常用命令.md'
+                    },
+                    {
+                        title: 'npm私服',
+                        collapsable: false,
+                        path: '/03-前端/npm/npm私服.md'
+                    },
+                    // HTML
+                    {
+                        title: 'html-禁止页面内容复制',
+                        collapsable: false,
+                        path: '/03-前端/html-禁止页面内容复制.md'
+                    },
+                    {
+                        title: 'html-复选框模拟单选按钮功能',
+                        collapsable: false,
+                        path: '/03-前端/html-复选框模拟单选按钮功能.md'
+                    },
+                    // CSS
+                    {
+                        title: 'css-flex 弹性布局',
+                        collapsable: false,
+                        path: '/03-前端/css-flex 弹性布局.md'
+                    },
+                    // JS
+                    {
+                        title: 'ckeditor-插件开发',
+                        collapsable: false,
+                        path: '/03-前端/ckeditor-插件开发.md'
+                    },
+                    {
+                        title: 'js-动态加载外部文件',
+                        collapsable: false,
+                        path: '/03-前端/js-动态加载外部文件'
+                    },
+                    {
+                        title: 'js-到顶部到底部js实现',
+                        collapsable: false,
+                        path: '/03-前端/js-到顶部到底部js实现'
+                    }
+                ]
             },
             {
                 title: 'Angular',
