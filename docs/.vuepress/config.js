@@ -712,8 +712,21 @@ module.exports = {
                     {
                         title: 'kafka',
                         collapsable: true,
-                        children: [
-
+                        children: [{
+                                title: 'kafka简介',
+                                collapsable: false,
+                                path: '/08-大数据/kafka/001-kafka简介.md'
+                            },
+                            {
+                                title: '安装',
+                                collapsable: false,
+                                path: '/08-大数据/kafka/002-安装.md'
+                            },
+                            {
+                                title: '常用命令',
+                                collapsable: false,
+                                path: '/08-大数据/kafka/003-常用命令.md'
+                            }
                         ]
                     },
                     {
