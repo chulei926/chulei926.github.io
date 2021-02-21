@@ -740,6 +740,86 @@ module.exports = {
                 ]
             },
             {
+                title: 'Python',
+                collapsable: true,
+                children: [{
+                        title: '基础',
+                        collapsable: false,
+                        path: '/06-python/001-基础.md'
+                    },
+                    {
+                        title: '数据类型',
+                        collapsable: false,
+                        path: '/06-python/002-数据类型.md'
+                    },
+                    {
+                        title: '类型检查&类型转换',
+                        collapsable: false,
+                        path: '/06-python/003-类型检查、类型转换.md'
+                    },
+                    {
+                        title: '对象',
+                        collapsable: false,
+                        path: '/06-python/004-对象.md'
+                    },
+                    {
+                        title: '运算符',
+                        collapsable: false,
+                        path: '/06-python/005-运算符.md'
+                    },
+                    {
+                        title: '流程控制-条件判断语句',
+                        collapsable: false,
+                        path: '/06-python/006-流程控制-条件判断语句.md'
+                    },
+                    {
+                        title: '流程控制-循环语句',
+                        collapsable: false,
+                        path: '/06-python/006-流程控制-循环语句.md'
+                    },
+                    {
+                        title: '序列',
+                        collapsable: false,
+                        path: '/06-python/007-序列.md'
+                    },
+                    {
+                        title: 'range',
+                        collapsable: false,
+                        path: '/06-python/008-range.md'
+                    },
+                    {
+                        title: 'tuple',
+                        collapsable: false,
+                        path: '/06-python/009-tuple.md'
+                    },
+                    {
+                        title: '字典（dictionary）',
+                        collapsable: false,
+                        path: '/06-python/010-字典（dictionary）.md'
+                    },
+                    {
+                        title: '集合',
+                        collapsable: false,
+                        path: '/06-python/011-集合.md'
+                    },
+                    {
+                        title: '函数-概念',
+                        collapsable: false,
+                        path: '/06-python/012-函数-概念.md'
+                    },
+                    {
+                        title: '函数-应用',
+                        collapsable: false,
+                        path: '/06-python/012-函数-应用.md'
+                    },
+                    {
+                        title: '面向对象',
+                        collapsable: false,
+                        path: '/06-python/013-面向对象.md'
+                    },
+                ]
+            },
+            {
                 title: '正则表达式',
                 collapsable: true,
                 children: [{
