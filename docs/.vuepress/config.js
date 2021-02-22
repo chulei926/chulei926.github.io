@@ -698,16 +698,46 @@ module.exports = {
                 children: [{
                         title: 'Hadoop',
                         collapsable: true,
-                        children: [
-
+                        children: [{
+                                title: 'Hadoop命令',
+                                collapsable: false,
+                                path: '/08-大数据/Hadoop/000-Hadoop命令.md'
+                            },
+                            {
+                                title: 'Hadoop安装',
+                                collapsable: false,
+                                path: '/08-大数据/Hadoop/001-Hadoop安装.md'
+                            },
+                            {
+                                title: '运行模式-本地模式',
+                                collapsable: false,
+                                path: '/08-大数据/Hadoop/002-Hadoop运行模式-本地模式.md'
+                            },
+                            {
+                                title: '运行模式-伪集群',
+                                collapsable: false,
+                                path: '/08-大数据/Hadoop/003-Hadoop运行模式-伪集群.md'
+                            },
+                            {
+                                title: '运行模式-完全集群',
+                                collapsable: false,
+                                path: '/08-大数据/Hadoop/004-Hadoop运行模式-完全集群.md'
+                            },
+                            {
+                                title: '集群配置分发',
+                                collapsable: false,
+                                path: '/08-大数据/Hadoop/005-集群配置分发.md'
+                            }
                         ]
                     },
                     {
                         title: 'HBASE',
                         collapsable: true,
-                        children: [
-
-                        ]
+                        children: [{
+                            title: '安装',
+                            collapsable: false,
+                            path: '/08-大数据/HBASE/安装.md'
+                        }, ]
                     },
                     {
                         title: 'kafka',
