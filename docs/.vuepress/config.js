@@ -101,9 +101,9 @@ module.exports = {
                         title: 'JDK8',
                         collapsable: true,
                         children: [{
-                                title: 'list&map互转',
+                                title: 'list&map',
                                 collapsable: false,
-                                path: '/01-java/jdk8/list&map互转.md'
+                                path: '/01-java/jdk8/list&map.md'
                             },
                             {
                                 title: '时间计算',
