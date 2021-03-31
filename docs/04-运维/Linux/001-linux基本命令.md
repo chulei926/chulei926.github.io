@@ -148,3 +148,23 @@ iotop
 split -l 10000 app.log -d -a 4 mongo2es_log_
 ```
 
+### 日志过滤显示
+```shell
+# tail -f 文件名
+tail -f catalina.out
+
+# 实时查看tomcat的控制台日志中，含有“发送邮件”关键字的记录
+tail -f catalina.out | grep --line-buffer "发送邮件"
+
+# grep筛选多个关键字
+
+## 1. 满足任意一个条件：
+tail -f catalina.out | grep --line-buffer -E "发送邮件|接收到"
+
+## 2. 同时满足多个条件：
+tail -f catalina.out | grep --line-buffer "发送邮件"  | grep --line-buffer "异常报警"
+
+# 注：–line-buffer ： 每输出一行，就刷新一次
+
+```
+
