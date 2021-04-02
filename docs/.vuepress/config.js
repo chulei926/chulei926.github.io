@@ -672,18 +672,26 @@ module.exports = {
                 title: 'Angular',
                 collapsable: true,
                 children: [{
-                    title: 'cli',
-                    collapsable: false,
-                    path: '/03-前端/Angular/cli.md'
-                }, {
-                    title: 'ng6升级至ng10',
-                    collapsable: false,
-                    path: '/03-前端/Angular/ng6升级至ng10.md'
-                }, {
-                    title: '创建&部署library到npm私服',
-                    collapsable: false,
-                    path: '/03-前端/Angular/创建&部署library到npm私服.md'
-                }]
+                        title: 'cli',
+                        collapsable: false,
+                        path: '/03-前端/Angular/cli.md'
+                    },
+                    {
+                        title: 'ng6升级至ng10',
+                        collapsable: false,
+                        path: '/03-前端/Angular/ng6升级至ng10.md'
+                    },
+                    {
+                        title: '创建&部署library到npm私服',
+                        collapsable: false,
+                        path: '/03-前端/Angular/创建&部署library到npm私服.md'
+                    },
+                    {
+                        title: '常用指令',
+                        collapsable: false,
+                        path: '/03-前端/Angular/常用指令.md'
+                    }
+                ]
             },
             {
                 title: 'Vue',
