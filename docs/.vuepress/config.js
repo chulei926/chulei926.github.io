@@ -690,6 +690,16 @@ module.exports = {
                         title: '常用指令',
                         collapsable: false,
                         path: '/03-前端/Angular/常用指令.md'
+                    },
+                    {
+                        title: '拦截器',
+                        collapsable: false,
+                        path: '/03-前端/Angular/拦截器.md'
+                    },
+                    {
+                        title: 'mathjax',
+                        collapsable: false,
+                        path: '/03-前端/Angular/mathjax.md'
                     }
                 ]
             },

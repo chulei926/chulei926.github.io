@@ -73,7 +73,8 @@ export default {
   height: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .container .tool {
@@ -85,6 +86,7 @@ export default {
   background-color: #fafafb;
   cursor: pointer;
   border-radius: 5px;
+  margin: 10px 30px;
 }
 
 .box {
