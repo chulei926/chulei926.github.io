@@ -1,4 +1,6 @@
-# 1. 引入 mathjax
+# mathjax公式渲染
+
+## 1. 引入 mathjax
 ```html
 <script type="text/javascript" src="https://cdn.eiduo.com/assets/jquery/jquery.js"></script>
 <script type="text/javascript" src="https://www.eiduo.com/formula-engine/static/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
@@ -9,7 +11,7 @@
 </script>
 ```
 
-# 2. 创建 global.service.ts
+## 2. 创建 global.service.ts
 
 ```javascript
 import {Injectable} from '@angular/core';
@@ -31,7 +33,7 @@ export class GlobalService {
 // providers: [GlobalService]
 ```
 
-# 3. 创建 mathjax 组件，实现双向绑定
+## 3. 创建 mathjax 组件，实现双向绑定
 
 ## 3.1 mathjax.component.html
 ```html
@@ -120,7 +122,7 @@ export class MathjaxComponent implements OnInit, ControlValueAccessor {
 ```
 
 
-# 4. 使用 mathjax 组件
+## 4. 使用 mathjax 组件
 ```html
 <res-plat-mathjax [(ngModel)]="htmlContent"></res-plat-mathjax>
 ```

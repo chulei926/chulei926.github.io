@@ -1,3 +1,5 @@
+# 常用命令
+
 ```shell
 npm config list	                # 查看基本配置
 npm config list -l	            # 查看所有配置

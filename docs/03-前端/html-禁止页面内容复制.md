@@ -1,3 +1,5 @@
+# 禁止页面内容复制
+
 ```js
 ncontextmenu="return false" 
 onselectstart="return false" 

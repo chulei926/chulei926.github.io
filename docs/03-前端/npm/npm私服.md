@@ -1,8 +1,10 @@
-# 环境准备
+# 私服安装
+
+## 环境准备
 1. Linux（Centos7）一台
 2. nexus安装包（nexus-3.25.1-02-unix.tar.gz）
 
-# 安装
+## 安装
 注意：以下所有操作都在 leichu 用户下完成
 
 ### 1. 上传 nexus 安装包 到Linux服务器的 /usr/local 下
@@ -36,7 +38,7 @@ http://study:8081/
 ```
 
 
-# npm 配置
+## npm 配置
 ![配置](/images/npm/配置.png)
 
 ### 1. 创建 Blob Stores（npm-stores）

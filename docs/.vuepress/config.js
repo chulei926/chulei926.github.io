@@ -193,7 +193,33 @@ module.exports = {
                 ],
             }],
             '/03-前端/': [{
-                title: '',
+                title: 'HTML&JS&CSS',
+                children: [
+                    '/03-前端/html-禁止页面内容复制',
+                    '/03-前端/html-复选框模拟单选按钮功能',
+                    '/03-前端/css-flex 弹性布局',
+                    '/03-前端/ckeditor-插件开发',
+                    '/03-前端/js-动态加载外部文件',
+                    '/03-前端/js-到顶部到底部js实现',
+                ],
+            }, {
+                title: 'npm',
+                children: [
+                    '/03-前端/npm/npm常用命令',
+                    '/03-前端/npm/npm私服',
+                ],
+            }, {
+                title: 'Angular',
+                children: [
+                    '/03-前端/Angular/cli',
+                    '/03-前端/Angular/ng6升级至ng10',
+                    '/03-前端/Angular/创建&部署library到npm私服',
+                    '/03-前端/Angular/常用指令',
+                    '/03-前端/Angular/拦截器',
+                    '/03-前端/Angular/mathjax',
+                ],
+            }, {
+                title: 'Vue',
                 children: [
                     '',
                 ],

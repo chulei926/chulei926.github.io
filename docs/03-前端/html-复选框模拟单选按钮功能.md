@@ -1,3 +1,5 @@
+# 复选框模拟单选按钮功能
+
 ```html
 <script type="text/javascript">
     $(function() {

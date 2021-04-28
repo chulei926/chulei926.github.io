@@ -1,12 +1,14 @@
+# CLI
+
 https://angular.io/cli/generate
 
-# 创建项目
+## 创建项目
 
 ```shell
 ng new <name> --routing --skip-tests --skip-git --skip-install -p ocr
 ```
 
-# 创建 schematic 
+## 创建 schematic 
 
 `ng generate <schematic> [options]`
 
@@ -43,5 +45,5 @@ ng g webWorker <name> [options]
 ```
 
 
-# 样例
+## 样例
 - ng g component login --export=true --flat=true

@@ -1,18 +1,20 @@
-# 1. 当前环境（升级后）
+# ng6升级至ng10
+
+## 1. 当前环境（升级后）
 
 ![升级后](/images/angular/升级后.png)
 
-# 2. 升级node
+## 2. 升级node
 
 下载最新安装包重新安装
 
 https://nodejs.org/zh-cn/download/
 
 
-# 3. 升级angular-cli
+## 3. 升级angular-cli
 
 ```shell
-# 卸载原angular-cli
+## 卸载原angular-cli
 npm uninstall -g @angualr/cli
 npm cache clean --force
 
@@ -20,10 +22,10 @@ npm cache clean --force
 npm install -g @angular/cli
 ```
 
-# 4. 使用公司内部npm私服
+## 4. 使用公司内部npm私服
 
 ```shell
-# 拷贝一下内容到 C:\Users\administrator\.npmrc 文件中
+## 拷贝一下内容到 C:\Users\administrator\.npmrc 文件中
 registry=http://192.168.195.95:8888/repository/npm-group/
 always-auth=true
 _auth="ZGVwbG95ZXI6ZGVwbG95ZXI="
@@ -31,7 +33,7 @@ _auth="ZGVwbG95ZXI6ZGVwbG95ZXI="
 ```
 
 
-# 5. 运行命令，启动更新程序，查看需要更新的依赖：
+## 5. 运行命令，启动更新程序，查看需要更新的依赖：
 ```shell
 cd demo-webapp\web
 ng update
@@ -39,13 +41,13 @@ ng update
 
 
 
-# 6. 强制升级
+## 6. 强制升级
 ```shell
 ng update --all --force
 ```
 
 
-# 7. 升级后修改点：
+## 7. 升级后修改点：
 ### 7.1 配置文件
 
 ##### 以下文件移入 web 目录，参考报告教师PC端或学生PC端
@@ -87,7 +89,7 @@ export class AppRoutingModule {
 
 ![目录结构](/images/angular/目录结构.png)
 
-# 常见问题解决
+## 常见问题解决
 
 ### 解决启动时警告：
 ```shell
