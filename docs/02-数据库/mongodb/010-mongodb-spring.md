@@ -1,4 +1,6 @@
-# maven 依赖
+# spring
+
+## maven 依赖
 ```xml
     <mongo-java-driver.version>2.12.1</mongo-java-driver.version>
     <spring-data-commons.version>1.7.2.RELEASE</spring-data-commons.version>
@@ -29,7 +31,7 @@
 	<!-- spring-mongodb end -->
 ```
 
-# mongodb.xml
+## mongodb.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -73,7 +75,7 @@
 </beans>
 ```
 
-# 参数
+## 参数
 ```shell
 #对mongo实例来说，每个host允许链接的最大链接数,这些链接空闲时会放入池中,如果链接被耗尽，任何请求链接的操作会被阻塞等待链接可用,推荐配置10
 connectionsPerHost=10

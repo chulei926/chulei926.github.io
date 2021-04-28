@@ -148,6 +148,91 @@ module.exports = {
                     '/01-java/dubbo/src02-JavaSPI',
                     '/01-java/dubbo/src03-DubboSPI',
                 ],
+            }],
+            '/02-数据库/': [{
+                title: 'MySQL',
+                children: [
+                    '/02-数据库/mysql/001-mysql安装-windows',
+                    '/02-数据库/mysql/002-mysql安装-linux',
+                    '/02-数据库/mysql/003-mysql主从复制',
+                    '/02-数据库/mysql/004-mysql数据类型',
+                    '/02-数据库/mysql/005-常用SQL',
+                    '/02-数据库/mysql/006-数据库SQL',
+                    '/02-数据库/mysql/007-数据表SQL',
+                ],
+            }, {
+                title: 'Redis',
+                children: [
+                    '/02-数据库/redis/001-redis安装',
+                    '/02-数据库/redis/002-redis配置文件详解',
+                ],
+            }, {
+                title: 'MongoDB',
+                children: [
+                    '/02-数据库/mongodb/001-mongodb单实例安装',
+                    '/02-数据库/mongodb/002-mongodb配置文件详解',
+                    '/02-数据库/mongodb/003-mongodb副本集模式原理',
+                    '/02-数据库/mongodb/004-mongodb副本集模式配置',
+                    '/02-数据库/mongodb/005-mongodb ObjectId',
+                    '/02-数据库/mongodb/006-mongodb oplog',
+                    '/02-数据库/mongodb/007-mongodb shell命令',
+                    '/02-数据库/mongodb/008-mongodb 高级查询',
+                    '/02-数据库/mongodb/009-mongodb-java',
+                    '/02-数据库/mongodb/010-mongodb-spring',
+                    '/02-数据库/mongodb/011-Dockerfile安装MongoDB',
+                    '/02-数据库/mongodb/012-常用命令',
+                    '/02-数据库/mongodb/013-数组更新',
+                ],
+            }, {
+                title: 'ES',
+                children: [
+                    '/02-数据库/elasticsearch/001-es集群部署',
+                    '/02-数据库/elasticsearch/002-IK分词器安装',
+                    '/02-数据库/elasticsearch/003-常用查询',
+                    '/02-数据库/elasticsearch/004-mapping样例',
+                ],
+            }],
+            '/03-前端/': [{
+                title: '',
+                children: [
+                    '',
+                ],
+            }],
+            '/04-运维/': [{
+                title: '',
+                children: [
+                    '',
+                ],
+            }],
+            '/05-移动端/': [{
+                title: '',
+                children: [
+                    '',
+                ],
+            }],
+            '/06-python/': [{
+                title: '',
+                children: [
+                    '',
+                ],
+            }],
+            '/07-golang/': [{
+                title: '',
+                children: [
+                    '',
+                ],
+            }],
+            '/08-大数据/': [{
+                title: '',
+                children: [
+                    '',
+                ],
+            }],
+            '/09-公式/': [{
+                title: '',
+                children: [
+                    '',
+                ],
             }]
         }
     }

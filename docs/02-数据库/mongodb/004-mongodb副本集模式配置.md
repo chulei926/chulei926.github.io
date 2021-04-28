@@ -1,4 +1,6 @@
-# 概念：
+# 副本集模式配置
+
+## 概念：
 *  MongoDB 副本集（Replica Set）是有自动故障恢复功能的主从集群，有一个Primary节点和一个或多个Secondary节点组成。类似于MySQL的MMM架构。
 
 *  副本集中数据同步过程：Primary节点写入数据，Secondary通过读取Primary的oplog得到复制信息，开始复制数据并且将复制信息写入到自己的oplog。如果某个操作失败，则备份节点停止从当前数据源复制数据。如果某个备份节点由于某些原因挂掉了，当重新启动后，就会自动从oplog的最后一个操作开始同步，同步完成后，将信息写入自己的oplog，由于复制操作是先复制数据，复制完成后再写入oplog，有可能相同的操作会同步两份，不过MongoDB在设计之初就考虑到这个问题，将oplog的同一个操作执行多次，与执行一次的效果是一样的。简单的说就是：
@@ -15,19 +17,19 @@
 	##### 注意：在副本集的环境中，要是所有的Secondary都宕机了，只剩下Primary。最后Primary会变成Secondary，不能提供服务。
 
 
-# 配置
+## 配置
 
-## 1. 服务器
+### 1. 服务器
 	192.168.170.129
 	192.168.170.130
 	192.168.170.131
 
-## 2. 安装mongodb
+### 2. 安装mongodb
 
 *  在mongodb的bin目录下创建data/replset和logs/replset.log。
 *  创建replset.conf配置文件。
 
-## 3. 创建配置文件replset.conf，内容如下：
+### 3. 创建配置文件replset.conf，内容如下：
 ```
 dbpath=/software/mongodb/data/replset
 logpath=/software/mongodb/logs/replset.log
@@ -38,27 +40,27 @@ bind_ip=0.0.0.0
 oplogSize=2048
 ```
 
-## 4. 在3台服务器上启动mongodb
+### 4. 在3台服务器上启动mongodb
 ```shell
 ./mongod -f replset.conf --replSet myreplset
 ```
-## 5. 副本集初始化
+### 5. 副本集初始化
 
 *  
 ```shell
-# 登录到其中一台mongo
+## 登录到其中一台mongo
 ./mongo 127.0.0.1:27017
 
-# 配置
+## 配置
 config={"_id":"myreplset","members":[{"_id":0,"host":"192.168.170.129:27017"},{"_id":1,"host":"192.168.170.130:27017"},{"_id":2,"host":"192.168.170.131:27017"}]};
 
-# 初始化
+## 初始化
 rs.initiate(config);
 
-# 查看副本集各节点的状态
+## 查看副本集各节点的状态
 rs.status();
 
-# 分别登录另外2台mongodb，分别执行
+## 分别登录另外2台mongodb，分别执行
 rs.slaveOk()
 ```
 
@@ -67,7 +69,7 @@ rs.slaveOk()
 * 验证
 
 
-## 6. 杀进程
+### 6. 杀进程
 ```shell
 ./mongo 127.0.0.1:27017
 use admin
@@ -75,7 +77,7 @@ db.shutdownServer()
 ```
 
 
-# windows下安装副本集
+## windows下安装副本集
 
 ```shell
 mongod.exe --config E:\mongodb\mongodb\bin\mongo.conf --serviceName MongoDB --install
@@ -94,7 +96,7 @@ rs.slaveOk();
 ```
 
 
-# 创建用户
+## 创建用户
 ```shell
 use admin
 db.createUser({user: 'root', pwd: '123456', roles:[{role:"root",db:"admin"}]})
@@ -105,14 +107,14 @@ db.createUser({user: 'tk_read_test', pwd: '123456', roles: [{ role: "read", db: 
 db.auth('tk_read_test', '123456')
 ```
 
-# 登陆数据库
+## 登陆数据库
 ```shell
 mongo.exe 127.0.0.1:27017
 use admin
 db.auth('root', 'eiduo521')
 ```
 
-# windows下单节点副本集
+## windows下单节点副本集
 ```shell
 dbpath=S:\database\mongodb-4.0.3-win64\data #数据库路径
 logpath=S:\database\mongodb-4.0.3-win64\logs\mongodb.log #日志输出文件路径
