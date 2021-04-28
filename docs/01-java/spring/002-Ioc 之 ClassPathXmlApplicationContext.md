@@ -1,7 +1,9 @@
-# 1. ClassPathXmlApplicationContext 核心关系图
+# ClassPathXmlApplicationContext
+
+## 1. ClassPathXmlApplicationContext 核心关系图
 ![ClassPathXmlApplicationContext](/images/spring/ClassPathXmlApplicationContext.png)
 
-# 2. 创建过程分析：
+## 2. 创建过程分析：
 
 代码：
 ```java
@@ -31,7 +33,7 @@ public ClassPathXmlApplicationContext(String[] configLocations, boolean refresh,
 }
 ```
 
-## 2.1 super(parent);
+### 2.1 super(parent);
 
 从 ClassPathXmlApplicationContext 的关系图可以看到，**ClassPathXmlApplicationContext 本质上其实就是一个 BeanFactory**。只不过 ClassPathXmlApplicationContext 在 BeanFactory 的基础上进行了很多扩展（暂不关心）。 <br/>
 - **ClassPathXmlApplicationContext** 继承自 AbstractXmlApplicationContext
@@ -52,11 +54,11 @@ public ClassPathXmlApplicationContext(String[] configLocations, boolean refresh,
 上面的核心接口在 **AbstractBeanDefinitionReader**#**loadBeanDefinitions**(`String location, @Nullable Set<Resource> actualResources`) 处有调用。
 
 
-## 2.2 setConfigLocations(configLocations); 
+### 2.2 setConfigLocations(configLocations); 
 
 设置 xml 配置文件到 configLocations， 此处 configLocations 是一个字符串数组，支持多个 xml 文件。
 
-## 2.3 refresh(); 重点！
+### 2.3 refresh(); 重点！
 ```java
 @Override
 public void refresh() throws BeansException, IllegalStateException {
@@ -132,7 +134,7 @@ public void refresh() throws BeansException, IllegalStateException {
 
 下面逐步分析：
 
-### 2.3.1 step 1    prepareRefresh();
+#### 2.3.1 step 1    prepareRefresh();
 ```java
 protected void prepareRefresh() {
     // Switch to active.
@@ -156,7 +158,7 @@ protected void prepareRefresh() {
 }
 ```
     
-### 2.3.2 step 2    ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory(); 
+#### 2.3.2 step 2    ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory(); 
 此过程比较复杂，下面详细分析：
 
 - AbstractRefreshableApplicationContext#**refreshBeanFactory**（刷新）
@@ -623,7 +625,7 @@ protected void prepareRefresh() {
         
 - AbstractRefreshableApplicationContext#getBeanFactory（获取）
 
-### 2.3.3 step 3    prepareBeanFactory(beanFactory);
+#### 2.3.3 step 3    prepareBeanFactory(beanFactory);
 ```java
 protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
     System.err.println("--- 配置工厂 prepareBeanFactory ");
@@ -685,7 +687,7 @@ protected void prepareBeanFactory(ConfigurableListableBeanFactory beanFactory) {
 }
 ```
 
-### 2.3.4 step 4    postProcessBeanFactory(beanFactory);
+#### 2.3.4 step 4    postProcessBeanFactory(beanFactory);
 该方法暂未实现。
 ```java
 /**
@@ -706,7 +708,7 @@ protected void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactor
 }
 ```
 
-### 2.3.5 step 5    invokeBeanFactoryPostProcessors(beanFactory); 
+#### 2.3.5 step 5    invokeBeanFactoryPostProcessors(beanFactory); 
 执行 工厂 后置处理器。
 ```java
 protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {
@@ -955,7 +957,7 @@ BeanDefinitionRegistryPostProcessor 继承了 BeanFactoryPostProcessor 。<br/>
 BeanDefinitionRegistryPostProcessor 主要用来在常规 BeanFactoryPostProcessor 检测开始之前注册其他 Bean 定义。<br/>
 说的简单点，就是 BeanDefinitionRegistryPostProcessor 具有更高的优先级，执行顺序在 BeanFactoryPostProcessor 之前。<br/>
 
-### 2.3.6 step 6    registerBeanPostProcessors(beanFactory); 
+#### 2.3.6 step 6    registerBeanPostProcessors(beanFactory); 
 注册 bean 的后置处理器。 [Spring IoC：registerBeanPostProcessors 详解](https://blog.csdn.net/v123411739/article/details/87886900)
 
 invokeBeanFactoryPostProcessors 方法主要用于处理 BeanFactoryPostProcessor 接口， 而 registerBeanPostProcessors 方法主要用于处理 BeanPostProcessor 接口。<br/>
@@ -1067,16 +1069,16 @@ public static void registerBeanPostProcessors(ConfigurableListableBeanFactory be
 }
 ```
 
-### 2.3.7 step 7    initMessageSource();
+#### 2.3.7 step 7    initMessageSource();
 
-### 2.3.8 step 8    initApplicationEventMulticaster(); 
+#### 2.3.8 step 8    initApplicationEventMulticaster(); 
 
-### 2.3.9 step 9    onRefresh();
+#### 2.3.9 step 9    onRefresh();
 
-### 2.3.10 step 10  registerListeners();
+#### 2.3.10 step 10  registerListeners();
 
-### 2.3.11 step 11  finishBeanFactoryInitialization(beanFactory);
+#### 2.3.11 step 11  finishBeanFactoryInitialization(beanFactory);
 
-### 2.3.12 step 12  finishRefresh();
+#### 2.3.12 step 12  finishRefresh();
 
 

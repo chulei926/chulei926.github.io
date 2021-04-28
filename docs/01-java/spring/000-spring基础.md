@@ -1,4 +1,6 @@
-# spring架构
+# spring基础
+
+## spring架构
 ![spring架构图](/images/spring/spring.jpg)
 
 ## 核心容器：
@@ -26,7 +28,7 @@
 
 ---
 
-# 给 spring 中 注册组件：
+## 给 spring 中 注册组件：
 1. 包扫描 + 组件标注注解（@Controller @Service @Respository @Component）
 2. @Bean
 3. @Import
@@ -37,6 +39,6 @@
     1. 通过 applicationContext.getBean()获取到是工厂bean创建的对象，而不是 工厂 bean 本身.
     2. 如果要获取 工厂bean 本身，需要在id之前加上 & 符号，比如 applicationContext.getBean("&userFactoryBean")
 
-# bean的生命周期：
+## bean的生命周期：
 > bean 创建 ---> 初始化 ---> 销毁
 

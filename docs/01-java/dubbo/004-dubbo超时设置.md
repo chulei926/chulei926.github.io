@@ -1,4 +1,6 @@
-# 服务端配置
+# dubbo超时设置
+
+## 服务端配置
 
 ```xml
 <!--服务配置-->
@@ -13,7 +15,7 @@
 </dubbo:service>
 ```
 
-# 客户端配置
+## 客户端配置
 
 同服务端
 
@@ -21,7 +23,7 @@
 <dubbo:consumer timeout="300000" retries="0" check="false"/>
 ```
 
-# 不同粒度配置的覆盖关系
+## 不同粒度配置的覆盖关系
 
 以 timeout 为例，下图显示了配置的查找顺序，其它 retries, loadbalance, actives 等类似：
 
@@ -34,6 +36,6 @@
 ![dubbo-config-override](/images/dubbo/dubbo-config-override.jpg)
 
 
-# 最佳实践：
+## 最佳实践：
 建议由服务提供方设置超时，因为一个方法需要执行多长时间，服务提供方更清楚，如果一个消费方同时引用多个服务，就不需要关心每个服务的超时设置。
 

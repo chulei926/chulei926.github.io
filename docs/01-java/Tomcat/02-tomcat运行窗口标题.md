@@ -1,4 +1,6 @@
-# 通常在Tomcat bin目录下用`startup.bat`启动Tomcat ，启动窗口显示的Title是Tomcat 
+# 启动窗口Title修改
+
+## 通常在Tomcat bin目录下用`startup.bat`启动Tomcat ，启动窗口显示的Title是Tomcat 
 
 如果遇到一个服务器上多个Tomcat的话就会容易混淆。更改方法如下：
 

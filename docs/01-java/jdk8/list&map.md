@@ -1,10 +1,12 @@
-# list 转 map
+# list&map
+
+## list 转 map
 
 ```java
 Map<String, User> userMap = userList.stream().collect(Collectors.toMap(User::getId, v -> v, (k1, k2) -> k1));
 ```
 
-# list 排序
+## list 排序
 ```java
 // 根据其中一个属性排序
 List<SimilarQuestion> similarQuestions = new ArrayList<>();
@@ -12,7 +14,7 @@ List<SimilarQuestion> similarQuestions = new ArrayList<>();
 similarQuestions.sort(Comparator.comparingDouble(SimilarQuestion::getSimilarity).reversed());
 ```
 
-# map 排序
+## map 排序
 
 ```java
 // 根据 key 排序

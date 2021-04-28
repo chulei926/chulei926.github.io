@@ -1,5 +1,6 @@
+# 事件通知机制
 
-# 定义 Event 继承自 ApplicationEvent
+## 定义 Event 继承自 ApplicationEvent
 ```java
 /**
  * 缓存刷新事件.
@@ -52,7 +53,7 @@ public class CacheRefreshEvent extends ApplicationEvent {
 }
 ```
 
-# 定义 Listener 实现 ApplicationListener 接口
+## 定义 Listener 实现 ApplicationListener 接口
 ```java
 /**
  * 知识点缓存.
@@ -156,7 +157,7 @@ public class KnowledgeCacheProcessor implements ApplicationListener<CacheRefresh
 }
 ```
 
-# 发布事件
+## 发布事件
 ```java
 CacheRefreshEvent event = new CacheRefreshEvent(this, phaseCode, subjectCode, CacheRefreshEvent.EventModel.KNOWLEDGE);
 SpringContextUtil.getApplicationContext().publishEvent(event);

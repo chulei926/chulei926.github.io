@@ -1,4 +1,6 @@
-# User.java
+# beans.xml加载
+
+## User.java
 ```java
 public class User implements Serializable {
     private static final long serialVersionUID = -1459763050776208272L;
@@ -23,7 +25,7 @@ public class User implements Serializable {
 }
 ```
 
-# application.xml
+## application.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -38,7 +40,7 @@ public class User implements Serializable {
 </beans>
 ```
 
-# ApplicationBootstrap.java
+## ApplicationBootstrap.java
 ```java
 public class ApplicationBootstrap {
     public static void main(String[] args) {
@@ -48,7 +50,7 @@ public class ApplicationBootstrap {
     }
 }
 ```
-# 加载过程分析
+## 加载过程分析
 - ClassPathXmlApplicationContext#**ClassPathXmlApplicationContext**(String[], boolean, ApplicationContext)
     - AbstractApplicationContext#**refresh**（核心）
         - AbstractApplicationContext#**prepareRefresh**（环境准备：设置启动时间、设置结束标记、设置激活标记、环境校验等）
@@ -82,11 +84,11 @@ public class ApplicationBootstrap {
         - AbstractApplicationContext#**finishRefresh**（初始化 lifeCycle 的bean启动。例如 quartz 的定时器，如果开启 JMX 则将 ApplicationContext 注册到上面）
 
 
-# 总结：
+## 总结：
 
 ![初始化加载流程图](/images/spring/初始化加载流程图.png)
 
-# 上图过程涉及一些问题，下面带着问题进行逐个分析：
+## 上图过程涉及一些问题，下面带着问题进行逐个分析：
 ## 1. 创建 ClassPathXmlApplicationContext 中间经历了什么？
 ## 1. prepareRefresh 预刷新的主要作用是什么？
 ## 2. obtainFreshBeanFactory 工厂是如何创建的？

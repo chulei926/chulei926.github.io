@@ -1,4 +1,6 @@
-# 1. `org.springframework.core.io.Resource`
+# Resource 与 ResourceLoader
+
+## 1. `org.springframework.core.io.Resource`
 
 对资源的抽象。它的每一个实现类都代表了一种资源的访问策略，
 如 ClassPathResource、RLResource、FileSystemResource 等。<br/>
@@ -24,7 +26,7 @@ org.springframework.core.io.Resource 为 Spring 框架所有资源的抽象和�
 
 
 
-# 2. `org.springframework.core.io.ResourceLoader`
+## 2. `org.springframework.core.io.ResourceLoader`
 ![ResourceLoader](/images/spring/ResourceLoader.png)
 
 `org.springframework.core.io.ResourceLoader` 为 Spring 资源加载的统一抽象，**具体的资源加载则由相应的实现类来完成**，所以可以将 ResourceLoader 称作为统一资源定位器。

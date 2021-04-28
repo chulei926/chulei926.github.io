@@ -1,4 +1,6 @@
-# Windows
+# JDK环境变量
+
+## Windows
 
 - JAVA_HOME
 
@@ -18,7 +20,7 @@
     %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
     ```
 
-# Linux
+## Linux
 
 -  安装目录
 

@@ -1,7 +1,9 @@
-# 1、NIO 概述
+# NIO
+
+## 1、NIO 概述
 Java NIO(non-blocking IO)是一个可以替代标准Java IO API的IO API（从Java 1.4开始)，Java NIO提供了与标准IO不同的IO工作方式。
 
-# 2、三大核心
+## 2、三大核心
 **Channel**(通道)，**Buffer**(缓冲区), **Selector**(选择器) 
 
 ![overview-channels-buffers](/images/netty/overview-channels-buffers.png)

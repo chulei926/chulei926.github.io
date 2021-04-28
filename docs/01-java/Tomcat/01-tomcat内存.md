@@ -1,4 +1,6 @@
-# Windows
+# Tomcat内存修改
+
+## Windows
 在`tomcat_home/bin`目录下找到`catalina.bat`，加上下面一行：
 
 ```batch
@@ -11,9 +13,7 @@ set JAVA_OPTS= -Xms1024M -Xmx1024M -XX:PermSize=256M -XX:MaxNewSize=256M -XX:Max
 ```
 
     
-    
-    
-# Linux
+## Linux
 ```shell
 # -server:一定要作为第一个参数，在多个CPU时性能佳
 

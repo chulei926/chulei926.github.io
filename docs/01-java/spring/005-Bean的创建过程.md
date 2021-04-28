@@ -1,4 +1,6 @@
-# step 1
+# Bean的创建过程
+
+## step 1
 ```java
 ApplicationContext ctx = new AnnotationConfigApplicationContext(BeanConfig.class); // 启动容器
 
@@ -42,7 +44,7 @@ protected void finishBeanFactoryInitialization(ConfigurableListableBeanFactory b
 
 ```
 
-# step 2
+## step 2
 ```java
 // org.springframework.beans.factory.support.DefaultListableBeanFactory#preInstantiateSingletons
 @Override
@@ -80,7 +82,7 @@ public void preInstantiateSingletons() throws BeansException {
 }
 ```
 
-# step 3
+## step 3
 ```java
 // org.springframework.beans.factory.support.AbstractBeanFactory#getBean(java.lang.String)
 @Override
@@ -164,7 +166,7 @@ protected <T> T doGetBean(final String name, @Nullable final Class<T> requiredTy
 }
 ```
 
-# step 4
+## step 4
 ```java
 // org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean(java.lang.String, org.springframework.beans.factory.support.RootBeanDefinition, java.lang.Object[])
 @Override
@@ -194,7 +196,7 @@ protected Object createBean(String beanName, RootBeanDefinition mbd, @Nullable O
 }
 
 ```
-# step 5
+## step 5
 ```java
 // org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(String, RootBeanDefinition, Object[])
 protected Object doCreateBean(final String beanName, final RootBeanDefinition mbd, final @Nullable Object[] args) throws BeanCreationException {
@@ -232,7 +234,7 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
 }
 ```
 
-## 说明：
+### 说明：
 该方法中的核心有3步：
 1. instanceWrapper = createBeanInstance(beanName, mbd, args);   创建对象
 2. populateBean(beanName, mbd, instanceWrapper);  调用setter方法设置属性
@@ -240,7 +242,7 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
 
 下面详细分析
 
-## step 5.1 createBeanInstance(beanName, mbd, args); 创建对象
+### step 5.1 createBeanInstance(beanName, mbd, args); 创建对象
 ```java
 // org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(String, RootBeanDefinition, Object[])
 protected BeanWrapper createBeanInstance(String beanName, RootBeanDefinition mbd, @Nullable Object[] args) {
@@ -264,7 +266,7 @@ protected BeanWrapper createBeanInstance(String beanName, RootBeanDefinition mbd
 }
 ```
 
-### step 5.1.1 createBeanInstance(beanName, mbd, args) 创建对象 之 有参构造器
+#### step 5.1.1 createBeanInstance(beanName, mbd, args) 创建对象 之 有参构造器
 ```java
 // org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(String, RootBeanDefinition, Constructor<?>[], Object[])
 protected BeanWrapper autowireConstructor(String beanName, RootBeanDefinition mbd, @Nullable Constructor<?>[] ctors, @Nullable Object[] explicitArgs) {
@@ -320,7 +322,7 @@ public Object instantiate(RootBeanDefinition bd, @Nullable String beanName, Bean
 
 ```
 
-### step 5.1.2 createBeanInstance(beanName, mbd, args) 创建对象 之 无参构造器
+#### step 5.1.2 createBeanInstance(beanName, mbd, args) 创建对象 之 无参构造器
 ```java
 // org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(String, RootBeanDefinition)
 protected BeanWrapper instantiateBean(final String beanName, final RootBeanDefinition mbd) {
@@ -358,7 +360,7 @@ public Object instantiate(RootBeanDefinition bd, @Nullable String beanName, Bean
 
 ```
 
-### step 5.1.3 createBeanInstance(beanName, mbd, args) 创建对象 之 BeanUtils.instantiateClass(ctor, args);
+#### step 5.1.3 createBeanInstance(beanName, mbd, args) 创建对象 之 BeanUtils.instantiateClass(ctor, args);
 ```java
 // org.springframework.beans.BeanUtils.instantiateClass(Constructor<T>, Object...)
 public static <T> T instantiateClass(Constructor<T> ctor, Object... args) throws BeanInstantiationException {
@@ -379,7 +381,7 @@ public static <T> T instantiateClass(Constructor<T> ctor, Object... args) throws
 }
 ```
 
-## step 5.2 populateBean(beanName, mbd, instanceWrapper); 调用setter方法设置属性
+### step 5.2 populateBean(beanName, mbd, instanceWrapper); 调用setter方法设置属性
 ```java
 // org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#populateBean(String beanName, RootBeanDefinition mbd, @Nullable BeanWrapper bw)
 protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable BeanWrapper bw) {
@@ -472,7 +474,7 @@ public void setValue(final @Nullable Object value) throws Exception {
 }
 ```
 
-## step 5.3 initializeBean(beanName, exposedObject, mbd); 初始化
+### step 5.3 initializeBean(beanName, exposedObject, mbd); 初始化
 ```java
 // org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
 protected Object initializeBean(final String beanName, final Object bean, @Nullable RootBeanDefinition mbd) {
@@ -600,11 +602,11 @@ protected void invokeInitMethods(String beanName, final Object bean, @Nullable R
 }
 ```
 
-# 总结：
+## 总结：
 
-## 1. bean 的创建是在 beanFactory 创建完成后进行，此时 所有的 bean 的定义 BeanDefinition 已经加载完成。
+### 1. bean 的创建是在 beanFactory 创建完成后进行，此时 所有的 bean 的定义 BeanDefinition 已经加载完成。
 
-## 2. bean 的创建 又分为 实例化对象、调用setter方法赋值、初始化属性 三个阶段。
+### 2. bean 的创建 又分为 实例化对象、调用setter方法赋值、初始化属性 三个阶段。
 
 
  + 2.1 实例化对象过程 主要是通过 实例化策略接口 InstantiationStrategy 来进行实例化。
@@ -618,6 +620,6 @@ protected void invokeInitMethods(String beanName, final Object bean, @Nullable R
 
 ![InstantiationStrategy](/images/spring/InstantiationStrategy.png)
 
-## 3. BeanPostProcess 执行的几个时机
+### 3. BeanPostProcess 执行的几个时机
 ![BeanPostProcess](/images/spring/bean的创建过程.png)
 

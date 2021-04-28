@@ -1,9 +1,11 @@
-# 1.点对点直连
+# dubbo调试
+
+## 1.点对点直连
 ```xml
 <dubbo:reference id="userService" interface="com.kitty.UserService" url="dubbo://127.0.0.1:21000"  check="false"/>
 ```
     
-# 2.invoke方式
+## 2.invoke方式
 ```shell
 telnet localhost 20880
 dubbo> ls

@@ -1,4 +1,6 @@
-# 常用命令
+# maven
+
+## 常用命令
 ```shell
 # 跳过单元测试
 mvn clean package -Dmaven.skip.test=true
@@ -7,7 +9,7 @@ mvn clean package -Dmaven.skip.test=true
 mvn clean release:clean release:prepare release:perform
 ```
 
-# 常用插件
+## 常用插件
 
 ### 指定JDK版本
 ```xml

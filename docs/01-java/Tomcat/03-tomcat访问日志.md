@@ -1,11 +1,13 @@
-# 1. 在tomcat的lib目录中加入4个jar包
+# Tomcat访问日志
+
+## 1. 在tomcat的lib目录中加入4个jar包
 
 - slf4j-api-1.7.25.jar
 - logback-access-1.2.3.jar
 - logback-classic-1.2.3.jar
 - logback-core-1.2.3.jar
 
-# 2. 在tomcat的conf目录中添加`logback-access.xml`配置文件。参考内容如下：
+## 2. 在tomcat的conf目录中添加`logback-access.xml`配置文件。参考内容如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -40,7 +42,7 @@
 </configuration>
 ```
 
-# 3.创建`AccessLogFilter.java`文件
+## 3.创建`AccessLogFilter.java`文件
 
 ```java
 /**
@@ -85,7 +87,7 @@ public class AccessLogFilter implements Filter {
 
 ```
 
-# 4.在`web.xml`中配置上面的Filter
+## 4.在`web.xml`中配置上面的Filter
 
 ```xml
 <filter>
