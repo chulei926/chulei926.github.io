@@ -101,7 +101,7 @@ export default {
   font-weight: 500;
 }
 
-img {
+.box img {
   width: 50px;
   height: 50px;
   margin-bottom: 5px;
