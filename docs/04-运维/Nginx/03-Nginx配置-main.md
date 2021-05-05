@@ -1,4 +1,5 @@
 
+# 配置-main
 ```nginx
 # 运行用户，默认是nginx，可以不进行设置
 user www;

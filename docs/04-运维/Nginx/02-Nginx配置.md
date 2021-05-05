@@ -1,3 +1,5 @@
+# 配置文件
+
 ```nginx
 # 运行用户，默认是nginx，可以不进行设置
 #user  nobody;

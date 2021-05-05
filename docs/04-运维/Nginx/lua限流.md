@@ -1,12 +1,14 @@
-# 修改nginx.conf
+# lua限流
+
+## 修改nginx.conf
 
 ```nginx
-# 添加在 http 块内
+## 添加在 http 块内
 access_by_lua_file /usr/local/nginx/conf/url_block.lua;
 lua_shared_dict block_url 50m;
 ```
 
-# url_block.lua
+## url_block.lua
 ```shell
 function get_client_url()
     local CLIENT_URL = ngx.var.uri

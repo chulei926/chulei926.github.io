@@ -1,42 +1,44 @@
-# 安装包及版本信息
+# nexus私服安装
+
+## 安装包及版本信息
 
     docker.io/sonatype/nexus3
 
-# 安装
+## 安装
 
 ```shell
 $ docker run -d --name nexus -p 8081:8081 -e INSTALL4J_ADD_VM_PARAMS="-Xms2g -Xmx2g" -v /mnt/data/nexus:/nexus-data --restart=on-failure:10 docker.io/sonatype/nexus3
 ```
 
-# 配置
+## 配置
 
     暂无
 
-# 启动
+## 启动
 
 ```shell
 $ docker start nexus3
 ```
 
-# 停止
+## 停止
 
 ```shell
 $ docker stop nexus3
 ```
 
-# 重启
+## 重启
 
 ```shell
 $ docker restart nexus3
 ```
 
-# 如何自动备份数据文件
+## 如何自动备份数据文件
 
 ```shell
 /mnt/data/nexus-data/tmp/scrpt/bk.sh
 ```
 
-# 如何监控并自动重启
+## 如何监控并自动重启
 
 ```shell
 /home/nexus3Watch

@@ -221,45 +221,86 @@ module.exports = {
             }, {
                 title: 'Vue',
                 children: [
-                    '',
+                    '/03-前端/vue/',
                 ],
             }],
             '/04-运维/': [{
-                title: '',
+                title: 'Linux',
                 children: [
-                    '',
+                    '/04-运维/Linux/001-linux基本命令',
+                    '/04-运维/Linux/002-linux用户和组',
+                    '/04-运维/Linux/003-ssh证书登录',
+                    '/04-运维/Linux/004-linux常用工具安装',
+                    '/04-运维/Linux/005-centos7修改网卡名称',
+                    '/04-运维/Linux/006-iptables',
+                    '/04-运维/Linux/007-JDK',
+                    '/04-运维/Linux/008-xshell配色设置',
+                    '/04-运维/Linux/009-磁盘常用命令',
+                    '/04-运维/Linux/010-静态IP',
+                    '/04-运维/Linux/011-openvpn客户端安装',
+                    '/04-运维/Linux/012-centos7使用阿里源',
+                    '/04-运维/Linux/013-内存占用高',
+                    '/04-运维/Linux/014-vim',
+                    '/04-运维/Linux/015-journalctl',
+                    '/04-运维/Linux/Linux性能实时监控工具',
+                ],
+            }, {
+                title: 'Nginx',
+                children: [
+                    '/04-运维/Nginx/01-安装脚本',
+                    '/04-运维/Nginx/02-Nginx配置',
+                    '/04-运维/Nginx/03-Nginx配置-main',
+                    '/04-运维/Nginx/04-Nginx配置-event',
+                    '/04-运维/Nginx/05-Nginx配置-http',
+                    '/04-运维/Nginx/499状态码问题',
+                    '/04-运维/Nginx/lua限流',
+                    '/04-运维/Nginx/OpenResty',
+                ],
+            }, {
+                title: 'Docker',
+                children: [
+                    '/04-运维/docker/000-docker基础',
+                    '/04-运维/docker/001-docker安装',
+                    '/04-运维/docker/003-docker搭建私有仓库',
+                    '/04-运维/docker/004-docker命令',
+                    '/04-运维/docker/005-docker常用命令',
+                    '/04-运维/docker/006-Dockerfile指令',
+                    '/04-运维/docker/007-Dockerfile各种构建',
+                    '/04-运维/docker/008-java-war包部署',
+                    '/04-运维/docker/009-nexus私服安装',
+                    '/04-运维/docker/010-pandoc加入docker'
                 ],
             }],
-            '/05-移动端/': [{
-                title: '',
-                children: [
-                    '',
-                ],
-            }],
-            '/06-python/': [{
-                title: '',
-                children: [
-                    '',
-                ],
-            }],
-            '/07-golang/': [{
-                title: '',
-                children: [
-                    '',
-                ],
-            }],
-            '/08-大数据/': [{
-                title: '',
-                children: [
-                    '',
-                ],
-            }],
-            '/09-公式/': [{
-                title: '',
-                children: [
-                    '',
-                ],
-            }]
+            // '/05-移动端/': [{
+            //     title: '',
+            //     children: [
+            //         '',
+            //     ],
+            // }],
+            // '/06-python/': [{
+            //     title: '',
+            //     children: [
+            //         '',
+            //     ],
+            // }],
+            // '/07-golang/': [{
+            //     title: '',
+            //     children: [
+            //         '',
+            //     ],
+            // }],
+            // '/08-大数据/': [{
+            //     title: '',
+            //     children: [
+            //         '',
+            //     ],
+            // }],
+            // '/09-公式/': [{
+            //     title: '',
+            //     children: [
+            //         '',
+            //     ],
+            // }]
         }
     }
 }

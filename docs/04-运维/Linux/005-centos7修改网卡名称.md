@@ -1,4 +1,6 @@
-# 1. 编辑/etc/sysconfig/network-scripts/ifcfg-ens33，将里面的NAME和DEVICE项修改为eth0
+# centos7修改网卡名称
+
+## 1. 编辑/etc/sysconfig/network-scripts/ifcfg-ens33，将里面的NAME和DEVICE项修改为eth0
 ```shell
 vim  /etc/sysconfig/network-scripts/ifcfg-ens33
 
@@ -24,12 +26,12 @@ ONBOOT=yes
 IPV6_PRIVACY=no
 ```
 
-# 2. 重命名网卡配置文件ifcfg-ens33为ifcfg-eth0
+## 2. 重命名网卡配置文件ifcfg-ens33为ifcfg-eth0
 ```shell
 mv /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-eth0
 ```
 
-# 3. 编辑/etc/default/grub并加入“net.ifnames=0 biosdevname=0 ”到GRUBCMDLINELINUX变量
+## 3. 编辑/etc/default/grub并加入“net.ifnames=0 biosdevname=0 ”到GRUBCMDLINELINUX变量
 ```shell
 vim /etc/default/grub
 
@@ -42,12 +44,12 @@ GRUB_CMDLINE_LINUX="crashkernel=auto net.ifnames=0 biosdevname=0 rd.lvm.lv=cento
 GRUB_DISABLE_RECOVERY="true" 
 ```
 
-# 4. 运行命令grub2-mkconfig -o /boot/grub2/grub.cfg 来重新生成GRUB配置并更新内核参数
+## 4. 运行命令grub2-mkconfig -o /boot/grub2/grub.cfg 来重新生成GRUB配置并更新内核参数
 ```shell
 grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
-# 5. 重启系统
+## 5. 重启系统
 ```shell
 reboot
 ```

@@ -1,14 +1,16 @@
-# 1. 卸载旧版本openVPN客户端
+# openVPN
+
+## 1. 卸载旧版本openVPN客户端
 ```shell
 yum remove openvpn
 ```
 
-# 2. 安装
+## 2. 安装
 ```shell
 yum -y install openvpn
 ```
 
-# 3. 上传配置文件
+## 3. 上传配置文件
 上传配置文件至`/etc/openvpn`目录
 
 ```shell
@@ -27,13 +29,13 @@ $ ll eiduo001/
 -rw-r--r--. 1 root root  520 11月 17 16:42 eiduo001.ovpn
 ```
 
-# 4. 启动
+## 4. 启动
 ```shell
 cd /etc/openvpn/eiduo001/ && openvpn --daemon openvpn_client --config eiduo001.ovpn
 ```
     注意：启动时必须先进入到 .ovpn 配置文件所在的目录，然后再启动。
 
-# 5. 配置开机启动
+## 5. 配置开机启动
 
 ### 5.1 创建启动脚本 `/root/script/start.sh`
 
@@ -53,7 +55,7 @@ chmod +x /root/script/start.sh
 chmod +x /etc/rc.d/rc.local
 vim /etc/rc.d/rc.local
 
-# 在文件结尾处追加一行
+## 在文件结尾处追加一行
 /root/script/start.sh
 ```
 

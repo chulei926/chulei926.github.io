@@ -1,3 +1,5 @@
+# xshell配色
+
 ```shell
 [leichu]
 text=00ff80

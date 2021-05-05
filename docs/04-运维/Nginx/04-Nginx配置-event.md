@@ -1,3 +1,4 @@
+# 配置-event
 
 ```nginx
 events {

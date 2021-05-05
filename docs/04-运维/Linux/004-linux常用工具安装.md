@@ -1,34 +1,36 @@
-#  ifconfig
+# 常用工具安装
+
+##  ifconfig
 ```shell
 yum -y install net-tools
 ```
 
-#  telnet
+##  telnet
 ```shell
 yum -y install telnet 
 service xinetd restart
 ```
 
-# vim
+## vim
 ```shell
 yum -y install vim*
 ```
 
 
 
-# sz rz
+## sz rz
 ```shell
 yum -y install lrzsz
 ```
 
 
-# wget
+## wget
 ```shell
 yum -y install wget
 ```
 
 
-# Python3
+## Python3
 ### 1. 安装编译相关工具
 ```shell
 yum -y groupinstall "Development tools"
