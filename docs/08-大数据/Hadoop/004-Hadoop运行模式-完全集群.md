@@ -1,4 +1,6 @@
-# 1. 集群部署规划
+# 运行模式-完全集群
+
+## 1. 集群部署规划
 
  ·    |  big002<br>192.168.2.10    |  big003<br>192.168.2.11  |   big004<br>192.168.2.12   
 ---|---|---|---|---
@@ -6,8 +8,8 @@ HDFS   |   NameNode<br>DataNode |   DataNode | SecondaryName<br>NodeDataNode  |
 YARN   |   NodeManager |   ResourceManager<br>NodeManager | NodeManager  |
 
 
-# 2. 配置集群
-## 2.1 核心配置文件（core-site.xml）
+## 2. 配置集群
+### 2.1 核心配置文件（core-site.xml）
 ```xml
 <!-- 指定HDFS中NameNode的地址 -->
 <property>
@@ -21,14 +23,14 @@ YARN   |   NodeManager |   ResourceManager<br>NodeManager | NodeManager  |
 </property>
 ```
 
-## 2.2 HDFS配置文件
+### 2.2 HDFS配置文件
 
-### 2.2.1 hadoop-env.sh
+#### 2.2.1 hadoop-env.sh
 ```shell
 export JAVA_HOME=/usr/local/jdk1.8.0_231
 ```
 
-### 2.2.3 hdfs-site.xml
+#### 2.2.3 hdfs-site.xml
 ```xml
 <!-- 指定HDFS副本的数量 -->
 <property>
@@ -42,14 +44,14 @@ export JAVA_HOME=/usr/local/jdk1.8.0_231
 </property>
 ```
 
-## 2.3 YARN 配置文件
+### 2.3 YARN 配置文件
 
-### 2.3.1 yarn-env.sh
+#### 2.3.1 yarn-env.sh
 ```shell
 export JAVA_HOME=/usr/local/jdk1.8.0_231
 ```
 
-### 2.3.2 yarn-site.xml
+#### 2.3.2 yarn-site.xml
 ```xml
 <!-- Reducer获取数据的方式 -->
 <property>
@@ -76,14 +78,14 @@ export JAVA_HOME=/usr/local/jdk1.8.0_231
 </property>
 ```
 
-## 2.4 MapReduce配置文件
+### 2.4 MapReduce配置文件
 
-### 2.4.1 mapred-env.sh
+#### 2.4.1 mapred-env.sh
 ```shell
 export JAVA_HOME=/usr/local/jdk1.8.0_231
 ```
 
-### 2.4.2 mapred-site.xml
+#### 2.4.2 mapred-site.xml
 ```xml
 <!-- 指定MR运行在YARN上 -->
 <property>
@@ -104,71 +106,71 @@ export JAVA_HOME=/usr/local/jdk1.8.0_231
 ```
 
 
-# 3. 分发集群配置文件
+## 3. 分发集群配置文件
 ```shell
 [leichu@big002 ~]$ xsync /usr/local/hadoop-2.10.0/etc
 ```
 
-# 4. 群器集群
+## 4. 群器集群
 
-## 4.1 配置 slaves
+### 4.1 配置 slaves
 ```shell
 vim /usr/local/hadoop-2.10.0/etc/hadoop/slaves
-# 输入数据节点所在的主机名称
+## 输入数据节点所在的主机名称
 big002
 big003
 big004
 
-# 配置文件分发
+## 配置文件分发
 [leichu@big002 ~]$ xsync /usr/local/hadoop-2.10.0/etc/hadoop/slaves
 ```
 
-## 4.2 格式化 NameNode
+### 4.2 格式化 NameNode
 ```shell
 [leichu@big002 ~]$ hdfs namenode -format
 ```
 
-## 4.3 启动 HDFS
+### 4.3 启动 HDFS
 ```shell
-# 注意：HDFS 只能在 NameNode 所在的主机上启动
+## 注意：HDFS 只能在 NameNode 所在的主机上启动
 [leichu@big002 ~]$ start-dfs.sh
 ```
 
-## 4.4 启动 YARN
+### 4.4 启动 YARN
 ```shell
-# 注意：YARN 只能在 ResourceManager 所在的主机上启动
+## 注意：YARN 只能在 ResourceManager 所在的主机上启动
 [leichu@big003 ~]$ start-yarn.sh
 ```
 
-## 4.5 启动 历史服务
+### 4.5 启动 历史服务
 ```shell
 [leichu@big002 ~]$ mr-jobhistory-daemon.sh
 ```
 
-# 5. 集群测试
+## 5. 集群测试
 
-## 5.1 上传大文件
+### 5.1 上传大文件
 ```shell
-# 在 HDFS 上创建测试目录 leichu
+## 在 HDFS 上创建测试目录 leichu
 [leichu@big002 ~]$ hdfs dfs -mkdir -p /leichu
-# 上传
+## 上传
 [leichu@big002 ~]$ hdfs dfs -put /leichu/hadoop-2.10.0.tar.gz /leichu
 
-# 查看测试目录下的文件
+## 查看测试目录下的文件
 [leichu@big002 hadoop]$ hdfs dfs -ls /leichu
 Found 1 items
 -rw-r--r--   3 leichu supergroup  392115733 2020-07-11 14:01 /leichu/hadoop-2.10.0.tar.gz
 ```
 
-## 5.2 web 端查看
+### 5.2 web 端查看
 ```shell
-# Hadoop 首页
+## Hadoop 首页
 http://big002:50070
 
-# HDFS 首页
+## HDFS 首页
 http://big002:50070/explorer.html
 
-# 历史服务首页
+## 历史服务首页
 http://big002:19888/jobhistory
 ```
 
@@ -181,13 +183,13 @@ http://big002:19888/jobhistory
 ![hdfs](/images/bigData/Hadoop/hdfs.png)
 
 
-# 6. 关闭集群
+## 6. 关闭集群
 ```shell
-# 关闭 big002 上的 HDFS 
+## 关闭 big002 上的 HDFS 
 [leichu@big002 ~]$ stop-dfs.sh
-# 关闭 big003 上的 YARN 
+## 关闭 big003 上的 YARN 
 [leichu@big003 ~]$ stop-yarn.sh
-# 关闭  big002 上的 历史服务 
+## 关闭  big002 上的 历史服务 
 [leichu@big002 ~]$ mr-jobhistory-daemon.sh stop historyserver
 ```
 

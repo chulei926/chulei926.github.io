@@ -1,28 +1,30 @@
-# 一、安装JDK
+# 安装
 
-# 二、安装Hadoop
+## 一、安装JDK
 
-## 1. 将Linux安装文件 `hadoop-2.10.0.tar.gz`上传至 `/mnt/e/bigData/hadoop` 目录
+## 二、安装Hadoop
 
-## 2. 将 `hadoop-2.10.0.tar.gz` 文件解压到 `/usr/local` 目录下	
+### 1. 将Linux安装文件 `hadoop-2.10.0.tar.gz`上传至 `/mnt/e/bigData/hadoop` 目录
+
+### 2. 将 `hadoop-2.10.0.tar.gz` 文件解压到 `/usr/local` 目录下	
 ```shell	
 sudo tar -xzvf /mnt/e/bigData/hadoop/hadoop-2.10.0.tar.gz -C /usr/local/
 ```
 
-## 3. 修改环境变量
+### 3. 修改环境变量
 ```shell
 vim .bashrc
-## HADOOP_HOME
+### HADOOP_HOME
 export HADOOP_HOME=/usr/local/hadoop-2.10.0
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ```
 
-## 4. 使配置文件生效
+### 4. 使配置文件生效
 ```shell
 source .bashrc
 ```
 
-## 5. 验证
+### 5. 验证
 ```shell
 $ hadoop
 Usage: hadoop [--config confdir] [COMMAND | CLASSNAME]
@@ -46,7 +48,7 @@ Usage: hadoop [--config confdir] [COMMAND | CLASSNAME]
 Most commands print help when invoked w/o parameters.
 ```
 
-# 三、Hadoop目录结构
+## 三、Hadoop目录结构
 ```shell
 $ ll /usr/local/hadoop-2.10.0/
 total 156

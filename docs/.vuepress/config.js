@@ -46,19 +46,19 @@ module.exports = {
                 ariaLabel: '运维',
                 link: '/04-运维/',
             },
-            {
-                text: '移动端',
-                ariaLabel: '移动端',
-                link: '/05-移动端/',
-            },
+            // {
+            //     text: '移动端',
+            //     ariaLabel: '移动端',
+            //     link: '/05-移动端/',
+            // },
             {
                 text: 'python',
-                ariaLabel: '移动端',
+                ariaLabel: 'python',
                 link: '/06-python/',
             },
             {
                 text: 'golang',
-                ariaLabel: '移动端',
+                ariaLabel: 'golang',
                 link: '/07-golang/',
             },
             {
@@ -66,11 +66,11 @@ module.exports = {
                 ariaLabel: '大数据',
                 link: '/08-大数据/',
             },
-            {
-                text: '公式',
-                ariaLabel: '公式',
-                link: '/09-公式/',
-            },
+            // {
+            //     text: '公式',
+            //     ariaLabel: '公式',
+            //     link: '/09-公式/',
+            // },
             {
                 text: 'github',
                 link: 'https://github.com/chulei926',
@@ -277,24 +277,55 @@ module.exports = {
             //         '',
             //     ],
             // }],
-            // '/06-python/': [{
-            //     title: '',
-            //     children: [
-            //         '',
-            //     ],
-            // }],
+            '/06-python/': [{
+                title: '基础',
+                children: [
+                    '/06-python/001-基础',
+                    '/06-python/002-数据类型',
+                    '/06-python/003-类型检查、类型转换',
+                    '/06-python/004-对象',
+                    '/06-python/005-运算符',
+                    '/06-python/006-流程控制-条件判断语句',
+                    '/06-python/006-流程控制-循环语句',
+                    '/06-python/007-序列',
+                    '/06-python/008-range',
+                    '/06-python/009-tuple',
+                    '/06-python/010-字典（dictionary）',
+                    '/06-python/011-集合',
+                    '/06-python/012-函数-概念',
+                    '/06-python/012-函数-应用',
+                    '/06-python/013-面向对象',
+                ],
+            }],
             // '/07-golang/': [{
             //     title: '',
             //     children: [
             //         '',
             //     ],
             // }],
-            // '/08-大数据/': [{
-            //     title: '',
-            //     children: [
-            //         '',
-            //     ],
-            // }],
+            '/08-大数据/': [{
+                title: 'Hadoop',
+                children: [
+                    '/08-大数据/Hadoop/000-Hadoop命令',
+                    '/08-大数据/Hadoop/001-Hadoop安装',
+                    '/08-大数据/Hadoop/002-Hadoop运行模式-本地模式',
+                    '/08-大数据/Hadoop/003-Hadoop运行模式-伪集群',
+                    '/08-大数据/Hadoop/004-Hadoop运行模式-完全集群',
+                    '/08-大数据/Hadoop/005-集群配置分发',
+                ],
+            }, {
+                title: 'HBASE',
+                children: [
+                    '/08-大数据/HBASE/安装',
+                ],
+            }, {
+                title: 'kafka',
+                children: [
+                    '/08-大数据/kafka/001-kafka简介',
+                    '/08-大数据/kafka/002-安装',
+                    '/08-大数据/kafka/003-常用命令',
+                ],
+            }],
             // '/09-公式/': [{
             //     title: '',
             //     children: [

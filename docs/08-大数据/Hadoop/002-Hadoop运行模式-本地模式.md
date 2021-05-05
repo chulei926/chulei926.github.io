@@ -1,4 +1,6 @@
-# Standalone Operation（本地模式）
+# 运行模式-本地模式
+
+## Standalone Operation（本地模式）
 运行官网grep样例：
 ```shell
 leichu@leichu:~/test$ mkdir input
@@ -23,7 +25,7 @@ leichu@leichu:~/test$
 leichu@leichu:~/test$ mkdir wcinput
 leichu@leichu:~/test$ cd wcinput/
 leichu@leichu:~/test/wcinput$ vim wc.txt
-# 输入以下内容
+## 输入以下内容
 hello world
 hello kitty
 hello
