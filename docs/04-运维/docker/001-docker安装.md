@@ -68,3 +68,8 @@ $ docker run -d -p 8000:8000 -p 9000:9000 --restart=always -v /var/run/docker.so
 访问 ```IP:9000``` 即可进入容器管理页面
 
 
+# Ubuntu 安装
+https://www.jianshu.com/p/c2d7aba34056
+```shell
+sudo apt install docker.io
+```
