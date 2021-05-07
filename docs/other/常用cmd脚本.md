@@ -1,4 +1,6 @@
-# dos命令备份文件
+# 常用bat脚本
+
+## dos命令备份文件
 
 ```shell
 title 'Batch Backup'
@@ -8,7 +10,7 @@ echo 'Batch Backup Success!'
 pause 
 ```
 
-# cmd启动脚本
+## cmd启动脚本
 
 ```shell
 @echo off
@@ -31,7 +33,7 @@ SET APPNAME=com.cosfuture.eiduo.ctb.gen.CTBGenBootstrap
 java -Xms1g -Xmx1g -Dfile.encoding=GBK -classpath "%CLASSPATH%" %APPNAME% start
 ```
 
-# 批量执行.exe
+## 批量执行.exe
 
 ```shell
 @echo off
@@ -42,14 +44,14 @@ start "" "D:\HBuilder\HBuilder.exe"
 exit
 ```
 
-# 打开指定网页
+## 打开指定网页
 
 ```shell
 path=%path%; C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 start chrome http://in.zhixue.com/rwgl/dashboard
 ```
 
-# 批量git
+## 批量git
 
 ### 批量 clone
 

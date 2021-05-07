@@ -66,11 +66,11 @@ module.exports = {
                 ariaLabel: '大数据',
                 link: '/08-大数据/',
             },
-            // {
-            //     text: '公式',
-            //     ariaLabel: '公式',
-            //     link: '/09-公式/',
-            // },
+            {
+                text: '杂货铺',
+                ariaLabel: '杂货铺',
+                link: '/other/',
+            },
             {
                 text: 'github',
                 link: 'https://github.com/chulei926',
@@ -334,12 +334,25 @@ module.exports = {
                     '/08-大数据/kafka/003-常用命令',
                 ],
             }],
-            // '/09-公式/': [{
-            //     title: '',
-            //     children: [
-            //         '',
-            //     ],
-            // }]
+            '/other/': [{
+                title: '正则表达式',
+                children: [
+                    '/other/正则表达式/常用表达式',
+                    '/other/正则表达式/常用元字符'
+                ],
+            }, {
+                title: '常用脚本',
+                children: [
+                    '/other/常用cmd脚本',
+                    '/other/常用shell脚本'
+                ],
+            }, {
+                title: '杂货铺',
+                children: [
+                    '/other/杂货铺',
+                    '/other/git'
+                ],
+            }]
         }
     }
 }

@@ -1,4 +1,6 @@
-# java 启动脚本
+# 常用shell脚本
+
+## java 启动脚本
 ```shell
 #!/bin/sh
 
@@ -10,7 +12,7 @@ fi
 CURRENT_DIR=$(pwd)
 PROJECT_DIR=$CURRENT_DIR"/.."
 
-# echo $PROJECT_DIR
+## echo $PROJECT_DIR
 
 CLASSPATH=
 CLASSPATH=$CLASSPATH:$PROJECT_DIR
@@ -19,7 +21,7 @@ for i in "$PROJECT_DIR"/lib/*.jar;do
 	CLASSPATH="$CLASSPATH":"$i"
 done
 
-# echo $CLASSPATH
+## echo $CLASSPATH
 
 APPNAME=com.cosfuture.eiduo.ctb.CTBServerBootstrap
 
@@ -32,7 +34,7 @@ echo "started"
 ```
 
 
-# java 停止脚本
+## java 停止脚本
 ```shell
 #!/bin/sh
 
@@ -49,7 +51,7 @@ echo "stoped"
 
 ```
 
-# 切换到 es 用户启动 elasticsearch
+## 切换到 es 用户启动 elasticsearch
 
 ```shell
 
@@ -77,20 +79,20 @@ EOF
 
 ```
 
-# 批量杀进程脚本
+## 批量杀进程脚本
 ```shell
 
 #!/bin/bash
 kill -9 $(ps -ef | grep elasticsearch | grep -v grep | awk '{print $2}')
 
 ## 杀指定端口
-# kill -9 $(netstat -nlp | grep :9200 | awk '{print $7}' | awk -F"/" '{ print $1 }')
+## kill -9 $(netstat -nlp | grep :9200 | awk '{print $7}' | awk -F"/" '{ print $1 }')
 
 exit 0
 ```
 
 
-# 基于docker容器使用Jacoco实现webapp测试覆盖率监控
+## 基于docker容器使用Jacoco实现webapp测试覆盖率监控
 自行下载jacoco最新版本，主要用到两个jar包：jacocoagent.jar，jacococli.jar
 替换JVM参数，把jacoco两个jar包放在tomcat/bin目录，执行定时器设置脚本，auto.sh脚本内容：
 ### auto.sh
