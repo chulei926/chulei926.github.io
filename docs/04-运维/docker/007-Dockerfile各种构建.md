@@ -157,3 +157,54 @@ docker run --name es3 -p 9203:9200 -p 9303:9300 -v "$PWD/start/node3/elasticsear
 ## TODO  内存不够，暂不考虑，docker-compose.yml 参考官网
 
 ```
+
+
+## Docker 构建 puppeteer
+
+[https://pan.baidu.com/s/1V81AJX2kpfSMQ9581kDKEg](https://pan.baidu.com/s/1V81AJX2kpfSMQ9581kDKEg)
+
+提取码：ppte
+
+### Dockerfile
+
+```shell
+FROM centos:7
+MAINTAINER leichu "chulei926@126.com"
+
+#设置系统编码（处理中文乱码问题）
+COPY fonts/* /usr/share/fonts/
+RUN yum install -y mkfontscale fontconfig
+RUN mkfontscale
+RUN mkfontdir
+
+# 安装 node
+ADD node.tar.gz /usr/local
+RUN ln -fs /usr/local/node/bin/node /usr/bin/node
+RUN ln -fs /usr/local/node/bin/npm /usr/bin/npm
+ENV NODE_HOME /usr/local/node
+ENV PATH ${NODE_HOME}/bin:$PATH
+
+# 安装 PM2
+RUN npm install pm2@latest -g
+RUN ln -fs /usr/local/node/bin/pm2 /usr/bin/pm2
+
+# 配置 puppeteer
+RUN yum install -y libatk* libxkbcommon* libgtk*
+ADD ppte.tar.gz /usr/local
+
+WORKDIR /usr/local/ppte
+
+RUN echo "#!/bin/bash" >> /bin/startPte && echo "./start.sh && sh" >> /bin/startPte
+RUN chmod +x /bin/startPte
+
+EXPOSE 8888
+
+CMD ["startPte"]
+```
+
+### 构建&推送&运行
+
+```shell
+docker build -t 192.168.195.95:5000/ppte .
+```
+

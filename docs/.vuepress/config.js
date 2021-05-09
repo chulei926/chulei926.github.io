@@ -203,10 +203,12 @@ module.exports = {
                     '/03-前端/js-到顶部到底部js实现',
                 ],
             }, {
-                title: 'npm',
+                title: 'NodeJs',
                 children: [
-                    '/03-前端/npm/npm常用命令',
-                    '/03-前端/npm/npm私服',
+                    '/03-前端/node/npm常用命令',
+                    '/03-前端/node/npm私服',
+                    '/03-前端/node/puppeteer',
+                    '/03-前端/node/puppeteer应用',
                 ],
             }, {
                 title: 'Angular',
