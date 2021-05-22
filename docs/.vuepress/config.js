@@ -280,6 +280,11 @@ module.exports = {
                     '/04-运维/docker/009-nexus私服安装',
                     '/04-运维/docker/010-pandoc加入docker'
                 ],
+            }, {
+                title: '其他',
+                children: [
+                    '/04-运维/other/一键扩容',
+                ],
             }],
             // '/05-移动端/': [{
             //     title: '',
