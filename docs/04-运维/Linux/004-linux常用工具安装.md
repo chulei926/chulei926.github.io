@@ -1,5 +1,13 @@
 # 常用工具安装
 
+## lsof
+```shell
+yum -y install lsof
+
+# lsof -i:8080
+
+```
+
 ##  ifconfig
 ```shell
 yum -y install net-tools
@@ -15,7 +23,6 @@ service xinetd restart
 ```shell
 yum -y install vim*
 ```
-
 
 
 ## sz rz
