@@ -47,7 +47,7 @@ export class GlobalService {
 
 ## 3.3 mathjax.component.ts
 ```javascript
-import {Component, forwardRef, OnInit} from '@angular/core';
+import {Component, ElementRef, forwardRef, OnInit} from '@angular/core';
 import {GlobalService} from "../../global.service";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
@@ -64,13 +64,14 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 export class MathjaxComponent implements OnInit, ControlValueAccessor {
 
 	content: string;
+	MathJax;
+	el: any;
 
-	mathJaxObject;
-
-	constructor(public gs: GlobalService) {
+	constructor(public gs: GlobalService, private elementRef: ElementRef) {
 	}
 
 	ngOnInit(): void {
+		this.el = this.elementRef.nativeElement.querySelector('span');
 		this.loadMathConfig()
 		this.renderMath();
 	}
@@ -78,24 +79,20 @@ export class MathjaxComponent implements OnInit, ControlValueAccessor {
 	writeValue(obj: any): void {
 		if (obj) {
 			this.content = obj;
-			// console.log("MathjaxComponent" , this.content);
-			this.renderMath()
+		} else {
+			this.content = '';
 		}
+		this.renderMath()
 	}
 
 	renderMath() {
-		this.mathJaxObject = this.gs.nativeGlobal()['MathJax'];
-		let angObj = this;
-		setTimeout(() => {
-			// console.log("renderMath")
-			angObj.mathJaxObject.Hub.Queue(["Typeset", angObj.mathJaxObject.Hub], 'mathContent');
-		}, 500)
+		this.MathJax = this.gs.nativeGlobal()['MathJax'];
+		this.MathJax.Hub.Queue(["Typeset", this.MathJax.Hub], this.el);
 	}
 
 	loadMathConfig() {
-		// console.log("load config")
-		this.mathJaxObject = this.gs.nativeGlobal()['MathJax'];
-		this.mathJaxObject.Hub.Config({
+		this.MathJax = this.gs.nativeGlobal()['MathJax'];
+		this.MathJax.Hub.Config({
 			showMathMenu: false,
 			tex2jax: {inlineMath: [["$", "$"], ["\\(", "\\)"]]},
 			CommonHTML: {linebreaks: {automatic: true}},
@@ -119,6 +116,7 @@ export class MathjaxComponent implements OnInit, ControlValueAccessor {
 
 	};
 }
+
 ```
 
 
