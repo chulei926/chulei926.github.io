@@ -339,6 +339,7 @@ module.exports = {
                     '/08-大数据/kafka/001-kafka简介',
                     '/08-大数据/kafka/002-安装',
                     '/08-大数据/kafka/003-常用命令',
+                    '/08-大数据/kafka/kafka-eagle',
                 ],
             }, {
                 title: 'Scala',
