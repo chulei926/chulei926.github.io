@@ -252,6 +252,9 @@ module.exports = {
                     '/04-运维/Linux/013-内存占用高',
                     '/04-运维/Linux/014-vim',
                     '/04-运维/Linux/015-journalctl',
+                    '/04-运维/Linux/016-firewalld',
+                    '/04-运维/Linux/017-centos8修改22端口',
+                    '/04-运维/Linux/018-curl',
                     '/04-运维/Linux/Linux性能实时监控工具',
                 ],
             }, {
@@ -339,6 +342,7 @@ module.exports = {
                     '/08-大数据/kafka/001-kafka简介',
                     '/08-大数据/kafka/002-安装',
                     '/08-大数据/kafka/003-常用命令',
+                    '/08-大数据/kafka/004-架构',
                     '/08-大数据/kafka/kafka-eagle',
                 ],
             }, {
