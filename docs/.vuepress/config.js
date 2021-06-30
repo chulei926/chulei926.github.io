@@ -195,12 +195,12 @@ module.exports = {
             '/03-前端/': [{
                 title: 'HTML&JS&CSS',
                 children: [
-                    '/03-前端/html-禁止页面内容复制',
-                    '/03-前端/html-复选框模拟单选按钮功能',
-                    '/03-前端/css-flex 弹性布局',
-                    '/03-前端/ckeditor-插件开发',
-                    '/03-前端/js-动态加载外部文件',
-                    '/03-前端/js-到顶部到底部js实现',
+                    '/03-前端/other/html-禁止页面内容复制',
+                    '/03-前端/other/html-复选框模拟单选按钮功能',
+                    '/03-前端/other/css-flex 弹性布局',
+                    '/03-前端/other/ckeditor-插件开发',
+                    '/03-前端/other/js-动态加载外部文件',
+                    '/03-前端/other/js-到顶部到底部js实现',
                 ],
             }, {
                 title: 'NodeJs',
@@ -221,9 +221,10 @@ module.exports = {
                     '/03-前端/Angular/mathjax',
                 ],
             }, {
-                title: 'Vue',
+                title: 'vue',
                 children: [
-                    '/03-前端/vue/',
+                    '/03-前端/vue/01-简介',
+                    '/03-前端/vue/02-生命周期',
                 ],
             }, {
                 title: 'PM2',
