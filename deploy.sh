@@ -11,3 +11,5 @@ npm run build && cp CNAME ./dist && git init && git add -A && git commit -m "$1"
 cd ../ && rm -rf dist
 
 echo 'deploy success!'
+
+sleep 60
