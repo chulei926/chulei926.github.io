@@ -8,6 +8,24 @@
 - Repository：仓库区（或本地仓库） 
 - Remote：远程仓库
 
+## git 常用代理配置
+
+```shell
+[https]
+    proxy = socks5://127.0.0.1:51837
+[http]
+    proxy = socks5://127.0.0.1:51837
+
+git config --global http.proxy socks5://127.0.0.1:51837
+git config --global https.proxy socks5://127.0.0.1:51837
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
 ## 一. 新建代码库
 
 ```shell
