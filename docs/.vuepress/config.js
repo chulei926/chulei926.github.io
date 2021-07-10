@@ -42,6 +42,7 @@ module.exports = {
 					{
 						text: '基础', items: [
 							{text: '常用配置', link: '/01-java/config/'},
+							{text: '代码片段', link: '/01-java/snippet/'},
 							{text: 'jdk8', link: '/01-java/jdk8/'},
 							{text: 'jvm', link: '/01-java/jvm/'},
 							{text: '源码学习', link: '/01-java/src/'},
@@ -128,6 +129,9 @@ module.exports = {
 			'/01-java/config/': [
 				'/01-java/config/jdk环境变量',
 				'/01-java/config/maven'
+			],
+			'/01-java/snippet/': [
+				'/01-java/snippet/动态加载jar包内的接口',
 			],
 			'/01-java/jdk8/': [
 				'/01-java/jdk8/时间计算',
