@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>方法与函数 | 好记性不如烂笔头</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="点点滴滴......">
+    
+    <link rel="preload" href="/assets/css/0.styles.2b177189.css" as="style"><link rel="preload" href="/assets/js/app.fb69d898.js" as="script"><link rel="preload" href="/assets/js/2.b6d12b8a.js" as="script"><link rel="preload" href="/assets/js/201.c5553a38.js" as="script"><link rel="prefetch" href="/assets/js/10.e60b5cf7.js"><link rel="prefetch" href="/assets/js/100.1ad42877.js"><link rel="prefetch" href="/assets/js/101.580dbc2a.js"><link rel="prefetch" href="/assets/js/102.aae6d3ab.js"><link rel="prefetch" href="/assets/js/103.553fbb8e.js"><link rel="prefetch" href="/assets/js/104.0a3302af.js"><link rel="prefetch" href="/assets/js/105.e104508b.js"><link rel="prefetch" href="/assets/js/106.a4e63c01.js"><link rel="prefetch" href="/assets/js/107.273e88fc.js"><link rel="prefetch" href="/assets/js/108.a0c2c64a.js"><link rel="prefetch" href="/assets/js/109.515599b0.js"><link rel="prefetch" href="/assets/js/11.bea12f15.js"><link rel="prefetch" href="/assets/js/110.a87db5d1.js"><link rel="prefetch" href="/assets/js/111.e0adb2bb.js"><link rel="prefetch" href="/assets/js/112.2d4edebb.js"><link rel="prefetch" href="/assets/js/113.e37d736c.js"><link rel="prefetch" href="/assets/js/114.248eb61c.js"><link rel="prefetch" href="/assets/js/115.be82aa3e.js"><link rel="prefetch" href="/assets/js/116.cf3941c3.js"><link rel="prefetch" href="/assets/js/117.e8ae337c.js"><link rel="prefetch" href="/assets/js/118.63875ca6.js"><link rel="prefetch" href="/assets/js/119.f408fc81.js"><link rel="prefetch" href="/assets/js/12.fed1007f.js"><link rel="prefetch" href="/assets/js/120.17578f23.js"><link rel="prefetch" href="/assets/js/121.f474b73f.js"><link rel="prefetch" href="/assets/js/122.d9eadba2.js"><link rel="prefetch" href="/assets/js/123.e12ec2ae.js"><link rel="prefetch" href="/assets/js/124.ce0be7f2.js"><link rel="prefetch" href="/assets/js/125.d13125f9.js"><link rel="prefetch" href="/assets/js/126.55e8b8fa.js"><link rel="prefetch" href="/assets/js/127.f8e53fe8.js"><link rel="prefetch" href="/assets/js/128.8de38514.js"><link rel="prefetch" href="/assets/js/129.3e4bf52a.js"><link rel="prefetch" href="/assets/js/13.c14d4654.js"><link rel="prefetch" href="/assets/js/130.f0763c8e.js"><link rel="prefetch" href="/assets/js/131.3f278c5f.js"><link rel="prefetch" href="/assets/js/132.1e8c1e7d.js"><link rel="prefetch" href="/assets/js/133.32de9eb9.js"><link rel="prefetch" href="/assets/js/134.60b6e1fa.js"><link rel="prefetch" href="/assets/js/135.3d3db264.js"><link rel="prefetch" href="/assets/js/136.65be59b0.js"><link rel="prefetch" href="/assets/js/137.758fb108.js"><link rel="prefetch" href="/assets/js/138.8fcbf1c5.js"><link rel="prefetch" href="/assets/js/139.ac887d41.js"><link rel="prefetch" href="/assets/js/14.740a74f0.js"><link rel="prefetch" href="/assets/js/140.763b6139.js"><link rel="prefetch" href="/assets/js/141.ecb092c9.js"><link rel="prefetch" href="/assets/js/142.5ab27404.js"><link rel="prefetch" href="/assets/js/143.90ff6bf1.js"><link rel="prefetch" href="/assets/js/144.21019805.js"><link rel="prefetch" href="/assets/js/145.5dcb47f9.js"><link rel="prefetch" href="/assets/js/146.c0a750c0.js"><link rel="prefetch" href="/assets/js/147.c2a73ce1.js"><link rel="prefetch" href="/assets/js/148.b7f9c8f5.js"><link rel="prefetch" href="/assets/js/149.363110d2.js"><link rel="prefetch" href="/assets/js/15.aed4db69.js"><link rel="prefetch" href="/assets/js/150.512ebdd1.js"><link rel="prefetch" href="/assets/js/151.f85ca684.js"><link rel="prefetch" href="/assets/js/152.3e8caf7d.js"><link rel="prefetch" href="/assets/js/153.7080b4f1.js"><link rel="prefetch" href="/assets/js/154.75d2e1a9.js"><link rel="prefetch" href="/assets/js/155.7a584847.js"><link rel="prefetch" href="/assets/js/156.a440f945.js"><link rel="prefetch" href="/assets/js/157.ee3b107c.js"><link rel="prefetch" href="/assets/js/158.97913acf.js"><link rel="prefetch" href="/assets/js/159.0413fc23.js"><link rel="prefetch" href="/assets/js/16.4925c6ad.js"><link rel="prefetch" href="/assets/js/160.884374f2.js"><link rel="prefetch" href="/assets/js/161.3dd95447.js"><link rel="prefetch" href="/assets/js/162.ab101ce6.js"><link rel="prefetch" href="/assets/js/163.ca3065be.js"><link rel="prefetch" href="/assets/js/164.df2cd500.js"><link rel="prefetch" href="/assets/js/165.30c3c0e4.js"><link rel="prefetch" href="/assets/js/166.883b7123.js"><link rel="prefetch" href="/assets/js/167.c0c0e1da.js"><link rel="prefetch" href="/assets/js/168.9f9b4b85.js"><link rel="prefetch" href="/assets/js/169.0ee1dea3.js"><link rel="prefetch" href="/assets/js/17.d6391e12.js"><link rel="prefetch" href="/assets/js/170.697026f2.js"><link rel="prefetch" href="/assets/js/171.b4f81b6f.js"><link rel="prefetch" href="/assets/js/172.7f338706.js"><link rel="prefetch" href="/assets/js/173.a2a75295.js"><link rel="prefetch" href="/assets/js/174.6dd4fdf5.js"><link rel="prefetch" href="/assets/js/175.b35fb06c.js"><link rel="prefetch" href="/assets/js/176.ef7a73ea.js"><link rel="prefetch" href="/assets/js/177.79def820.js"><link rel="prefetch" href="/assets/js/178.6cd13678.js"><link rel="prefetch" href="/assets/js/179.6e837b31.js"><link rel="prefetch" href="/assets/js/18.1ca2f31e.js"><link rel="prefetch" href="/assets/js/180.11e6d857.js"><link rel="prefetch" href="/assets/js/181.e0db6c73.js"><link rel="prefetch" href="/assets/js/182.16711bd9.js"><link rel="prefetch" href="/assets/js/183.046fdc85.js"><link rel="prefetch" href="/assets/js/184.f634e505.js"><link rel="prefetch" href="/assets/js/185.7b712659.js"><link rel="prefetch" href="/assets/js/186.5f4661fa.js"><link rel="prefetch" href="/assets/js/187.46d98da2.js"><link rel="prefetch" href="/assets/js/188.7be1a588.js"><link rel="prefetch" href="/assets/js/189.2876eb37.js"><link rel="prefetch" href="/assets/js/19.73e28b99.js"><link rel="prefetch" href="/assets/js/190.d004cc3f.js"><link rel="prefetch" href="/assets/js/191.d2947513.js"><link rel="prefetch" href="/assets/js/192.483c27a5.js"><link rel="prefetch" href="/assets/js/193.2596d237.js"><link rel="prefetch" href="/assets/js/194.fcc76cfe.js"><link rel="prefetch" href="/assets/js/195.70737764.js"><link rel="prefetch" href="/assets/js/196.919fcc57.js"><link rel="prefetch" href="/assets/js/197.1ef28f5c.js"><link rel="prefetch" href="/assets/js/198.e0a6fe32.js"><link rel="prefetch" href="/assets/js/199.08290a45.js"><link rel="prefetch" href="/assets/js/20.14837391.js"><link rel="prefetch" href="/assets/js/200.e7e67561.js"><link rel="prefetch" href="/assets/js/202.4b0e61d0.js"><link rel="prefetch" href="/assets/js/203.3c505561.js"><link rel="prefetch" href="/assets/js/204.1b166f49.js"><link rel="prefetch" href="/assets/js/205.a686972b.js"><link rel="prefetch" href="/assets/js/206.0750c900.js"><link rel="prefetch" href="/assets/js/207.99cef71b.js"><link rel="prefetch" href="/assets/js/208.cf10d120.js"><link rel="prefetch" href="/assets/js/209.e5abd5df.js"><link rel="prefetch" href="/assets/js/21.2d755bd0.js"><link rel="prefetch" href="/assets/js/210.e7be4d73.js"><link rel="prefetch" href="/assets/js/211.74d34114.js"><link rel="prefetch" href="/assets/js/212.981f7897.js"><link rel="prefetch" href="/assets/js/213.0c44b2c5.js"><link rel="prefetch" href="/assets/js/214.9a9babc2.js"><link rel="prefetch" href="/assets/js/215.6ddf9b39.js"><link rel="prefetch" href="/assets/js/22.f33f39c8.js"><link rel="prefetch" href="/assets/js/23.6e33d671.js"><link rel="prefetch" href="/assets/js/24.51dbe89c.js"><link rel="prefetch" href="/assets/js/25.9e5b3df6.js"><link rel="prefetch" href="/assets/js/26.d4ae666b.js"><link rel="prefetch" href="/assets/js/27.ef806a1e.js"><link rel="prefetch" href="/assets/js/28.1e97b724.js"><link rel="prefetch" href="/assets/js/29.09049583.js"><link rel="prefetch" href="/assets/js/3.5e7a9c9d.js"><link rel="prefetch" href="/assets/js/30.a628ad7e.js"><link rel="prefetch" href="/assets/js/31.23e36eaa.js"><link rel="prefetch" href="/assets/js/32.0f99a71b.js"><link rel="prefetch" href="/assets/js/33.eb0bf3d8.js"><link rel="prefetch" href="/assets/js/34.3f493a89.js"><link rel="prefetch" href="/assets/js/35.9408e48b.js"><link rel="prefetch" href="/assets/js/36.424d7734.js"><link rel="prefetch" href="/assets/js/37.90fb2ebf.js"><link rel="prefetch" href="/assets/js/38.4d30da08.js"><link rel="prefetch" href="/assets/js/39.93054a38.js"><link rel="prefetch" href="/assets/js/4.124d1835.js"><link rel="prefetch" href="/assets/js/40.63a8303d.js"><link rel="prefetch" href="/assets/js/41.06e912a1.js"><link rel="prefetch" href="/assets/js/42.d38c27f7.js"><link rel="prefetch" href="/assets/js/43.31d22b89.js"><link rel="prefetch" href="/assets/js/44.edbf3ee9.js"><link rel="prefetch" href="/assets/js/45.d77dd9a3.js"><link rel="prefetch" href="/assets/js/46.f7f5c9c8.js"><link rel="prefetch" href="/assets/js/47.853a1789.js"><link rel="prefetch" href="/assets/js/48.f2a73883.js"><link rel="prefetch" href="/assets/js/49.b8f9f4ee.js"><link rel="prefetch" href="/assets/js/5.bb8d4ce6.js"><link rel="prefetch" href="/assets/js/50.ea2ce146.js"><link rel="prefetch" href="/assets/js/51.a64b81b1.js"><link rel="prefetch" href="/assets/js/52.4dd3d219.js"><link rel="prefetch" href="/assets/js/53.459228fe.js"><link rel="prefetch" href="/assets/js/54.b6003b2d.js"><link rel="prefetch" href="/assets/js/55.c3336f6b.js"><link rel="prefetch" href="/assets/js/56.dc5fadb8.js"><link rel="prefetch" href="/assets/js/57.03ab04a3.js"><link rel="prefetch" href="/assets/js/58.2aa91e52.js"><link rel="prefetch" href="/assets/js/59.de695979.js"><link rel="prefetch" href="/assets/js/6.1095786d.js"><link rel="prefetch" href="/assets/js/60.e4e534b7.js"><link rel="prefetch" href="/assets/js/61.49119645.js"><link rel="prefetch" href="/assets/js/62.cb973818.js"><link rel="prefetch" href="/assets/js/63.698df36e.js"><link rel="prefetch" href="/assets/js/64.61981fd9.js"><link rel="prefetch" href="/assets/js/65.4b722f3c.js"><link rel="prefetch" href="/assets/js/66.ff2c0d37.js"><link rel="prefetch" href="/assets/js/67.73c9d519.js"><link rel="prefetch" href="/assets/js/68.d52ce6cc.js"><link rel="prefetch" href="/assets/js/69.bec71e03.js"><link rel="prefetch" href="/assets/js/7.46d8c6fd.js"><link rel="prefetch" href="/assets/js/70.d3185a6c.js"><link rel="prefetch" href="/assets/js/71.d9f64f70.js"><link rel="prefetch" href="/assets/js/72.8d7fad7b.js"><link rel="prefetch" href="/assets/js/73.db2e1cd7.js"><link rel="prefetch" href="/assets/js/74.ae68b777.js"><link rel="prefetch" href="/assets/js/75.31ebc648.js"><link rel="prefetch" href="/assets/js/76.31a22be9.js"><link rel="prefetch" href="/assets/js/77.5e808c5e.js"><link rel="prefetch" href="/assets/js/78.e5fea7cb.js"><link rel="prefetch" href="/assets/js/79.a30e41fb.js"><link rel="prefetch" href="/assets/js/8.018cf3a8.js"><link rel="prefetch" href="/assets/js/80.3cdd845f.js"><link rel="prefetch" href="/assets/js/81.e8d23e4c.js"><link rel="prefetch" href="/assets/js/82.d4c40332.js"><link rel="prefetch" href="/assets/js/83.18469d8a.js"><link rel="prefetch" href="/assets/js/84.dbd8765e.js"><link rel="prefetch" href="/assets/js/85.17524629.js"><link rel="prefetch" href="/assets/js/86.15e30fe5.js"><link rel="prefetch" href="/assets/js/87.53e1e6c0.js"><link rel="prefetch" href="/assets/js/88.a1c95421.js"><link rel="prefetch" href="/assets/js/89.06c0888a.js"><link rel="prefetch" href="/assets/js/9.61b5ead5.js"><link rel="prefetch" href="/assets/js/90.b31112c1.js"><link rel="prefetch" href="/assets/js/91.48c121b2.js"><link rel="prefetch" href="/assets/js/92.f59504d7.js"><link rel="prefetch" href="/assets/js/93.0a4898f7.js"><link rel="prefetch" href="/assets/js/94.1445469d.js"><link rel="prefetch" href="/assets/js/95.b88c84c2.js"><link rel="prefetch" href="/assets/js/96.5d3db9b0.js"><link rel="prefetch" href="/assets/js/97.8145c0f9.js"><link rel="prefetch" href="/assets/js/98.c4cbcf3b.js"><link rel="prefetch" href="/assets/js/99.3229f43d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2b177189.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="好记性不如烂笔头" class="logo"> <span class="site-name can-hide">好记性不如烂笔头</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/config/" class="nav-link">
+  常用配置
+</a></li><li class="dropdown-subitem"><a href="/01-java/snippet/" class="nav-link">
+  代码片段
+</a></li><li class="dropdown-subitem"><a href="/01-java/jdk8/" class="nav-link">
+  jdk8
+</a></li><li class="dropdown-subitem"><a href="/01-java/jvm/" class="nav-link">
+  jvm
+</a></li><li class="dropdown-subitem"><a href="/01-java/src/" class="nav-link">
+  源码学习
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Framework
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/01-java/bio&amp;nio&amp;netty/" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/01-java/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/01-java/dubbo/" class="nav-link">
+  Dubbo
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/mysql/" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03-前端/node/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/Angular/" class="nav-link">
+  Angular
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/pm2/" class="nav-link">
+  PM2
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/other/" class="nav-link">
+  other
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/04-运维/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/other/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/06-python/" class="nav-link">
+  python
+</a></div><div class="nav-item"><a href="/07-golang/" class="nav-link">
+  golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/08-大数据/Hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/HBASE/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/kafka/" class="nav-link">
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/scala/" class="nav-link">
+  Scala
+</a></li></ul></div></div><div class="nav-item"><a href="/other/" class="nav-link">
+  杂货铺
+</a></div><div class="nav-item"><a href="https://github.com/chulei926" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/config/" class="nav-link">
+  常用配置
+</a></li><li class="dropdown-subitem"><a href="/01-java/snippet/" class="nav-link">
+  代码片段
+</a></li><li class="dropdown-subitem"><a href="/01-java/jdk8/" class="nav-link">
+  jdk8
+</a></li><li class="dropdown-subitem"><a href="/01-java/jvm/" class="nav-link">
+  jvm
+</a></li><li class="dropdown-subitem"><a href="/01-java/src/" class="nav-link">
+  源码学习
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Framework
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/01-java/bio&amp;nio&amp;netty/" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/01-java/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/01-java/dubbo/" class="nav-link">
+  Dubbo
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/mysql/" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03-前端/node/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/Angular/" class="nav-link">
+  Angular
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/pm2/" class="nav-link">
+  PM2
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/other/" class="nav-link">
+  other
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/04-运维/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/other/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/06-python/" class="nav-link">
+  python
+</a></div><div class="nav-item"><a href="/07-golang/" class="nav-link">
+  golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/08-大数据/Hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/HBASE/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/kafka/" class="nav-link">
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/scala/" class="nav-link">
+  Scala
+</a></li></ul></div></div><div class="nav-item"><a href="/other/" class="nav-link">
+  杂货铺
+</a></div><div class="nav-item"><a href="https://github.com/chulei926" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/08-大数据/scala/01-概述.html" class="sidebar-link">概述</a></li><li><a href="/08-大数据/scala/02-环境搭建.html" class="sidebar-link">环境搭建</a></li><li><a href="/08-大数据/scala/03-入门.html" class="sidebar-link">入门</a></li><li><a href="/08-大数据/scala/04-基础语法.html" class="sidebar-link">基础语法</a></li><li><a href="/08-大数据/scala/05-流程控制.html" class="sidebar-link">流程控制</a></li><li><a href="/08-大数据/scala/06-方法与函数.html" class="active sidebar-link">方法与函数</a></li><li><a href="/08-大数据/scala/07-面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/08-大数据/scala/08-异常.html" class="sidebar-link">异常</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="方法与函数"><a href="#方法与函数" class="header-anchor">#</a> 方法与函数</h1> <p>Scala 有方法与函数，二者在语义上的区别很小。Scala <strong>方法是类</strong>的一部分，而<strong>函数是一个对象</strong>可以赋值给一个变量。换句话来说<strong>在类中定义的函数即是方法</strong>。</p> <ul><li>Scala 中的方法跟 Java 的类似，<strong>方法是组成类的一部分</strong>。</li> <li>Scala 中的<strong>函数则是一个完整的对象</strong>，Scala 中的<strong>函数其实就是继承了 Trait 的类的对象</strong>。</li> <li>Scala 中使用 <strong>val 语句可以定义函数</strong>，<strong>def 语句定义方法</strong>。</li></ul> <div class="language-scala line-numbers-mode"><pre class="language-scala"><code><span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    println<span class="token punctuation">(</span>plus<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> add<span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">val</span> plus <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span>  <span class="token keyword">=&gt;</span> a <span class="token operator">+</span> b
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="_1-函数"><a href="#_1-函数" class="header-anchor">#</a> 1. 函数</h2> <h3 id="_1-1-定义"><a href="#_1-1-定义" class="header-anchor">#</a> 1.1 定义</h3> <div class="language-scala line-numbers-mode"><pre class="language-scala"><code><span class="token keyword">def</span> 函数名 <span class="token punctuation">(</span><span class="token punctuation">[</span>参数名<span class="token operator">:</span> 参数类型<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">:</span> 返回值类型<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+	语句<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token keyword">return</span> 返回值
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>函数声明关键字为def  (definition)</li> <li>[参数名: 参数类型], ...：表示函数的输入(就是参数列表), 可以没有。 如果有，多个参数使用逗号间隔</li> <li>函数中的语句：表示为了实现某一功能代码块</li> <li>函数可以有返回值,也可以没有</li> <li>返回值形式1:    : 返回值类型  =</li> <li>返回值形式2:    =  表示返回值类型不确定，使用类型推导完成</li> <li>返回值形式3:      表示没有返回值，return 不生效</li> <li>如果没有return ,默认以执行到最后一行的结果作为返回值</li></ul> <h3 id="_1-2-注意事项"><a href="#_1-2-注意事项" class="header-anchor">#</a> 1.2 注意事项</h3> <ul><li>函数的形参列表可以是多个, 如果函数没有形参，调用时 可以不带()</li> <li>形参列表和返回值列表的数据类型可以是值类型和引用类型</li> <li>Scala中的函数可以根据函数体最后一行代码自行推断函数返回值类型。那么在这种情况下，return关键字可以省略</li> <li>因为Scala可以自行推断，所以在省略return关键字的场合，返回值类型也可以省略</li> <li>如果函数明确使用return关键字，那么函数返回就不能使用自行推断了,这时要明确写成 : 返回类型 =  ，当然如果什么都不写，即使有return 返回值为()</li> <li>如果函数明确声明无返回值（声明Unit），那么函数体中即使使用return关键字也不会有返回值</li> <li>如果明确函数无返回值或不确定返回值类型，那么返回值类型可以省略(或声明为Any)</li> <li>Scala语法中任何的语法结构都可以嵌套其他语法结构(灵活)，即：函数中可以再声明/定义函数，类中可以再声明类 ，方法中可以再声明/定义方法</li> <li>Scala函数的形参，在声明参数时，直接赋初始值(默认值)，这时调用函数时，如果没有指定实参，则会使用默认值。如果指定了实参，则实参会覆盖默认值。</li></ul> <div class="language-scala line-numbers-mode"><pre class="language-scala"><code><span class="token keyword">def</span> sayOk<span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">&quot;jack&quot;</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> name <span class="token operator">+</span> <span class="token string">&quot; ok! &quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>如果函数存在多个参数，每一个参数都可以设定默认值，那么这个时候，传递的参数到底是覆盖默认值，还是赋值给没有默认值的参数，就不确定了(默认按照声明顺序[从左到右])。在这种情况下，可以采用带名参数</li></ul> <div class="language-scala line-numbers-mode"><pre class="language-scala"><code><span class="token keyword">def</span> mysqlCon<span class="token punctuation">(</span>addr<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">&quot;localhost&quot;</span><span class="token punctuation">,</span> port<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">3306</span><span class="token punctuation">,</span> user<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">&quot;root&quot;</span><span class="token punctuation">,</span> pwd<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot;addr=&quot;</span> <span class="token operator">+</span> addr<span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot;port=&quot;</span> <span class="token operator">+</span> port<span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot;user=&quot;</span> <span class="token operator">+</span> user<span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot;pwd=&quot;</span> <span class="token operator">+</span> pwd<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>Scala 函数的形参默认是val的，因此不能在函数中进行修改.</li> <li>递归函数未执行之前是无法推断出来结果类型，在使用时必须有明确的返回值类型</li> <li>Scala函数支持可变参数</li></ul> <div class="language-scala line-numbers-mode"><pre class="language-scala"><code><span class="token comment">//支持0到多个参数</span>
+<span class="token keyword">def</span> sum<span class="token punctuation">(</span>args <span class="token operator">:</span><span class="token builtin">Int</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token punctuation">{</span> 
+<span class="token punctuation">}</span>
+<span class="token comment">//支持1到多个参数</span>
+<span class="token keyword">def</span> sum<span class="token punctuation">(</span>n1<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> args<span class="token operator">:</span>  <span class="token builtin">Int</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token builtin">Int</span>  <span class="token operator">=</span> <span class="token punctuation">{</span> 
+<span class="token punctuation">}</span>
+<span class="token comment">// args 是集合, 通过 for循环 可以访问到各个值。</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="_1-3-惰性函数"><a href="#_1-3-惰性函数" class="header-anchor">#</a> 1.3 惰性函数</h3> <p>惰性计算（尽可能延迟表达式求值）是许多函数式编程语言的特性。惰性集合在需要时提供其元素，无需预先计算它们，这带来了一些好处。首先，您可以将耗时的计算推迟到绝对需要的时候。其次，您可以创造无限个集合，只要它们继续收到请求，就会继续提供元素。函数的惰性使用让您能够得到更高效的代码。Java 并没有为惰性提供原生支持，Scala提供了。</p> <h5 id="注意事项和细节"><a href="#注意事项和细节" class="header-anchor">#</a> 注意事项和细节</h5> <ul><li>lazy 不能修饰 var 类型的变量</li> <li>不但是 在调用函数时，加了 lazy ,会导致函数的执行被推迟，我们在声明一个变量时，如果给声明了 lazy ,那么变量值得分配也会推迟。 比如 lazy val i = 10</li></ul> <h5 id="java实现懒加载-其实就是java的懒汉式单例"><a href="#java实现懒加载-其实就是java的懒汉式单例" class="header-anchor">#</a> java实现懒加载（其实就是java的懒汉式单例）</h5> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+	
+	<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">volatile</span> <span class="token class-name">Singleton</span> instance <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">Singleton</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+					instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h5 id="scala实现懒加载"><a href="#scala实现懒加载" class="header-anchor">#</a> Scala实现懒加载</h5> <div class="language-scala line-numbers-mode"><pre class="language-scala"><code><span class="token comment">/**
+ *  没加 lazy 关键字之前 输出如下：
+ *  main 开始执行
+ *  sum 开始执行
+ *  sum 已调用
+ *  调用结果是：3
+ *
+ *  加 lazy 关键字之后 输出如下：
+ *  main 开始执行
+ *  sum 已调用
+ *  sum 开始执行
+ *  调用结果是：3
+ */</span>
+<span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot; main 开始执行&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment">// val s = sum(1, 2)</span>
+    <span class="token keyword">lazy</span> <span class="token keyword">val</span> s <span class="token operator">=</span> sum<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot; sum 已调用&quot;</span><span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot; 调用结果是：&quot;</span> <span class="token operator">+</span> s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> sum<span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    println<span class="token punctuation">(</span><span class="token string">&quot; sum 开始执行&quot;</span><span class="token punctuation">)</span>
+    a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2021-06-03 21:16:13</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/08-大数据/scala/05-流程控制.html" class="prev">
+        流程控制
+      </a></span> <span class="next"><a href="/08-大数据/scala/07-面向对象.html">
+        面向对象
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fb69d898.js" defer></script><script src="/assets/js/2.b6d12b8a.js" defer></script><script src="/assets/js/201.c5553a38.js" defer></script>
+  </body>
+</html>
