@@ -107,6 +107,7 @@ module.exports = {
 			{
 				text: '大数据',
 				items: [
+					{text: 'Zookeeper', link: '/08-大数据/Zookeeper/'},
 					{text: 'Hadoop', link: '/08-大数据/Hadoop/'},
 					{text: 'Hbase', link: '/08-大数据/HBASE/'},
 					{text: 'kafka', link: '/08-大数据/kafka/'},
@@ -177,10 +178,7 @@ module.exports = {
 				'/01-java/spring/sprin事件通知机制',
 			],
 			'/01-java/dubbo/': [
-				'/01-java/dubbo/001-zk安装',
-				'/01-java/dubbo/002-dubbo调试',
-				'/01-java/dubbo/003-修改线程池',
-				'/01-java/dubbo/004-dubbo超时设置',
+				'/01-java/dubbo/01-常用',
 				'/01-java/dubbo/src01-SPI',
 				'/01-java/dubbo/src02-JavaSPI',
 				'/01-java/dubbo/src03-DubboSPI',
@@ -316,6 +314,9 @@ module.exports = {
 				'/06-python/013-面向对象',
 			],
 			// '/07-golang/': [],
+			'/08-大数据/Zookeeper/': [
+				'/08-大数据/zookeeper/安装',
+			],
 			'/08-大数据/Hadoop/': [
 				'/08-大数据/Hadoop/000-Hadoop命令',
 				'/08-大数据/Hadoop/001-Hadoop安装',
