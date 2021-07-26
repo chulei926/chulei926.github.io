@@ -43,7 +43,57 @@ Dubbo SPI 在 `dubbo-common` 的 `extension` 包实现，如下图所示：<br>
 
 ## ExtensionLoader
 
-ExtensionLoader 是 Dubbo 的扩展点加载器，这是 Dubbo SPI 的**核心**。
+ExtensionLoader 是 Dubbo 的扩展点加载器，这是 Dubbo SPI 的**核心**。 再回顾一下前面的一个例子：
+
+```java
+@SPI
+public interface Color {
+	void draw(URL url);
+}
+
+public class Red implements Color {
+	@Override
+	public void draw(URL url) {
+		System.out.println(" I am Red");
+	}
+}
+
+public class Blue implements Color {
+	@Override
+	public void draw(URL url) {
+		System.out.println(" I am blue");
+	}
+}
+
+@Adaptive
+public class Black implements Color {
+	@Override
+	public void draw(URL url) {
+		System.out.println(" I am black");
+	}
+}
+
+// src/main/resources/META-INF/dubbo/com.alibaba.dubbo.demo.model.dubbo_spi.Color
+black=com.alibaba.dubbo.demo.model.dubbo_spi.Black
+blue=com.alibaba.dubbo.demo.model.dubbo_spi.Blue
+red=com.alibaba.dubbo.demo.model.dubbo_spi.Red
+
+public class Dubbo_SPI_Test {
+	@Test
+	public void adaptiveTest() {
+        URL url = URL.valueOf("test://localhost/test");
+		ExtensionLoader<Color> extensionLoader = ExtensionLoader.getExtensionLoader(Color.class);
+		final Color color = extensionLoader.getAdaptiveExtension();
+		color.draw(url);
+	}
+}
+```
+
+找出关键的2句话：
+1. `ExtensionLoader.getExtensionLoader(Color.class)`：获取扩展点加载器。
+2. `extensionLoader.getAdaptiveExtension()` ：获取自适应扩展点。
+
+下面详细分析这2句代码，这两句分析透彻了，Dubbo SPI 机制也了解差不多了。
 
 首先看下 ExtensionLoader 类中的成员变量：
 
@@ -152,6 +202,325 @@ private Map<String, IllegalStateException> exceptions = new ConcurrentHashMap<St
 ```
 
 看到上面的成员变量，头大！但是，不能怂！继续撸！
+
+## `ExtensionLoader.getExtensionLoader(Color.class)`
+```java
+// Step 1
+public static <T> ExtensionLoader<T> getExtensionLoader(Class<T> type) {
+    // 检查入参不能为空
+    if (type == null)
+        throw new IllegalArgumentException("Extension type == null");
+    // 检查入参必须是接口，如果不是，抛出异常。
+    if (!type.isInterface()) {
+        throw new IllegalArgumentException("Extension type(" + type + ") is not interface!");
+    }
+    // 检查是否带有 SPI 注解，如果没有，直接抛出异常！
+    if (!withExtensionAnnotation(type)) {
+        throw new IllegalArgumentException("Extension type(" + type + ") is not extension, because WITHOUT @" + SPI.class.getSimpleName() + " Annotation!");
+    }
+    // 先从缓存获取 ExtensionLoader，如果缓存没有，创建一个 新的 ExtensionLoader。
+    ExtensionLoader<T> loader = (ExtensionLoader<T>) EXTENSION_LOADERS.get(type);
+    if (loader == null) {
+        // // 第一次加载肯定是空，所提先创建一个 扩展点加载器 ExtensionLoader。
+        EXTENSION_LOADERS.putIfAbsent(type, new ExtensionLoader<T>(type));
+        loader = (ExtensionLoader<T>) EXTENSION_LOADERS.get(type);
+    }
+    return loader;
+}
+
+// Step 2
+// 私有化构造器，说明不想被外部调用。将实例化的权限 收紧。
+private ExtensionLoader(Class<?> type) {
+    this.type = type;
+    // 如果 type 是 ExtensionFactory 工厂类类型，objectFactory = null
+    // 否则，获取 ExtensionFactory 类的 扩展类加载器，最后获取 自适应的 扩展类。
+    // objectFactory = (type == ExtensionFactory.class ? null : ExtensionLoader.getExtensionLoader(ExtensionFactory.class).getAdaptiveExtension());
+    // TODO 上面是源码，下面是改写，主要用于分析 ExtensionLoader.getExtensionLoader(ExtensionFactory.class)
+    if (type == ExtensionFactory.class) {
+        objectFactory = null;
+    } else {
+        // 第一次进入，type = Color.class，所以进到 else 分支。
+        // 此时先获取一个 ExtensionFactory 扩展点的工厂类，这里又回到了 Step 1，
+        // 在 Step 1 中会执行 new ExtensionLoader<T>(ExtensionFactory.class)，便有了一个 扩展点加载器的工厂类，并加入 EXTENSION_LOADERS 缓存。
+        ExtensionLoader<ExtensionFactory> factoryExtensionLoader = ExtensionLoader.getExtensionLoader(ExtensionFactory.class);
+        objectFactory = factoryExtensionLoader.getAdaptiveExtension();  // 核心
+    }
+}
+```
+
+通过上面的分析可以看出，在获取 `Color` 的扩展点加载器之前，先创建了一个 `ExtensionFactory` 的扩展点加载器，然后通过 `factoryExtensionLoader.getAdaptiveExtension()` 获取其**自适应扩展点**，继续深入分析该方法的调用过程。
+注意：此时的 `type` 是 `ExtensionFactory.class`，并非 `Color.class`。
+```java
+// Step 3：先从缓存中获取，如果缓存没有就调用 createAdaptiveExtension 创建一个自适应扩展点，然后将其放入缓存。
+public T getAdaptiveExtension() {
+    // 从缓存中获取自适应拓展
+    Object instance = cachedAdaptiveInstance.get();
+    if (instance == null) {
+        if (createAdaptiveInstanceError == null) { // 缓存未命中
+            synchronized (cachedAdaptiveInstance) {
+                // 加锁，双重检查
+                instance = cachedAdaptiveInstance.get();
+                if (instance == null) {
+                    try {
+                        // 创建自适应拓展
+                        instance = createAdaptiveExtension();  // 核心
+                        // 设置自适应拓展到缓存中
+                        cachedAdaptiveInstance.set(instance);
+                    } catch (Throwable t) {
+                        createAdaptiveInstanceError = t;
+                        throw new IllegalStateException("fail to create adaptive instance: " + t.toString(), t);
+                    }
+                }
+            }
+        } else {
+            throw new IllegalStateException("fail to create adaptive instance: " + createAdaptiveInstanceError.toString(), createAdaptiveInstanceError);
+        }
+    }
+    return (T) instance;
+}
+
+// Step 4
+// 1. 调用 getAdaptiveExtensionClass 方法获取自适应拓展 Class 对象
+// 2. 通过反射进行实例化
+// 3. 调用 injectExtension 方法向拓展实例中注入依赖
+private T createAdaptiveExtension() {
+    try {
+        // 获取自适应拓展类，并通过反射实例化
+        // return injectExtension((T) getAdaptiveExtensionClass().newInstance());
+        // 源码是上面这一句，下面这几句为改写，就是为了看清楚每一步的过程。
+        Class<?> clazz = getAdaptiveExtensionClass(); // 核心
+        T t = (T) clazz.newInstance();
+        return injectExtension(t);
+    } catch (Exception e) {
+        throw new IllegalStateException("Can not create adaptive extension " + type + ", cause: " + e.getMessage(), e);
+    }
+}
+
+// Step 5
+private Class<?> getAdaptiveExtensionClass() {
+    // 通过 SPI 获取所有的拓展类
+    getExtensionClasses();  // 核心
+    // 检查缓存，若缓存不为空，则直接返回缓存
+    if (cachedAdaptiveClass != null) {
+        return cachedAdaptiveClass;
+    }
+    // 创建自适应拓展类
+    return cachedAdaptiveClass = createAdaptiveExtensionClass();
+}
+
+// Step 6
+private Map<String, Class<?>> getExtensionClasses() {
+    // 从缓存中获取已加载的拓展类
+    Map<String, Class<?>> classes = cachedClasses.get();
+    // 双重检查
+    if (classes == null) {
+        synchronized (cachedClasses) {
+            classes = cachedClasses.get();
+            if (classes == null) {
+                classes = loadExtensionClasses(); // 核心
+                cachedClasses.set(classes);
+            }
+        }
+    }
+    return classes;
+}
+
+// Step 7：正式加载 扩展点
+// 此时的 type 还是 ExtensionFactory，并且 ExtensionFactory 源码上也加了 @SPI 注解，说明 ExtensionFactory 这个工厂类本身就是一个扩展点。
+private Map<String, Class<?>> loadExtensionClasses() {
+    // 获取 SPI 注解，这里的 type 变量是在调用 getExtensionLoader 方法时传入的
+    final SPI defaultAnnotation = type.getAnnotation(SPI.class);
+    if (defaultAnnotation != null) {
+        String value = defaultAnnotation.value();
+        if ((value = value.trim()).length() > 0) {  // ExtensionFactory 的 @SPI 没有标注 value，所以不会进到下面的 if 代码块。
+            // 对 SPI 注解内容进行切分（逗号切分）
+            String[] names = NAME_SEPARATOR.split(value);
+            // 检测 SPI 注解内容是否合法，不合法则抛出异常
+            if (names.length > 1) {
+                throw new IllegalStateException("more than 1 default extension name on extension " + type.getName() + ": " + Arrays.toString(names));
+            }
+            // 设置默认名称，参考 getDefaultExtension 方法
+            if (names.length == 1)
+                cachedDefaultName = names[0];
+        }
+    }
+
+    Map<String, Class<?>> extensionClasses = new HashMap<String, Class<?>>();
+    // 加载指定文件夹下的配置文件
+    // 1. "META-INF/dubbo/internal/";
+    loadDirectory(extensionClasses, DUBBO_INTERNAL_DIRECTORY);
+    // 2. "META-INF/dubbo/";
+    loadDirectory(extensionClasses, DUBBO_DIRECTORY);
+    // 3. "META-INF/services/";
+    loadDirectory(extensionClasses, SERVICES_DIRECTORY);
+    return extensionClasses;
+}
+```
+上面的 **Step 3、4、5、6、7** 这几步，主要就是为了加载 `ExtensionFactory` 的自适应扩展点，因为此时的 `type` 还是 `ExtensionFactory`。<br>
+具体的加载过程就在 `loadDirectory(Map<String, Class<?>> extensionClasses, String dir)` 方法之中。这里会加载 3个 位置的 文件：
+- `META-INF/dubbo/internal/`：dubbo 内部自带的扩展点目录
+- `META-INF/dubbo/`：用户自定义的扩展点目录
+- `META-INF/services/`：JDK 的 扩展点目录
+
+在对应的目录找到各自的扩展点加载器：
+1. **META-INF/dubbo/internal/** 目录：<br>
+![dubboInternalSPI2](/images/dubbo/dubboInternalSPI2.png)
+![dubboInternalSPI](/images/dubbo/dubboInternalSPI.png)
+```java
+// dubbo-config-spring 包
+// src/main/resources/META-INF/dubbo/internal/com.alibaba.dubbo.common.extension.ExtensionFactory
+spring=com.alibaba.dubbo.config.spring.extension.SpringExtensionFactory
+
+// dubbo-common 包
+// src/main/resources/META-INF/dubbo/internal/com.alibaba.dubbo.common.extension.ExtensionFactory
+adaptive=com.alibaba.dubbo.common.extension.factory.AdaptiveExtensionFactory
+spi=com.alibaba.dubbo.common.extension.factory.SpiExtensionFactory
+```
+**注意：** 在其他版本中，把 dubbo-config-spring 包中的 ExtensionFactory 扩展和 dubbo-common 包中的 ExtensionFactory 扩展又整合在一个文件中，如下：
+```java
+// src/main/resources/META-INF/dubbo/internal/com.alibaba.dubbo.common.extension.ExtensionFactory
+spring=com.alibaba.dubbo.config.spring.extension.SpringExtensionFactory
+adaptive=com.alibaba.dubbo.common.extension.factory.AdaptiveExtensionFactory
+spi=com.alibaba.dubbo.common.extension.factory.SpiExtensionFactory
+```
+上面的变化不影响分析源码，只是换了一个位置，加载过程还是一样的。
+
+2. **META-INF/dubbo/** 目录：<br>
+![userSPI](/images/dubbo/userSPI.png)
+```java
+// src/main/resources/META-INF/dubbo/com.alibaba.dubbo.demo.model.dubbo_spi.Color 我自定义的
+black=com.alibaba.dubbo.demo.model.dubbo_spi.Black
+blue=com.alibaba.dubbo.demo.model.dubbo_spi.Blue
+red=com.alibaba.dubbo.demo.model.dubbo_spi.Red
+```
+3. **META-INF/services/** 目录：<br>
+暂不考虑
+
+下面接上步 Step 7 继续深入分析加载过程。进入  `loadDirectory(Map<String, Class<?>> extensionClasses, String dir)` 方法：
+```java
+// Step 8
+private void loadDirectory(Map<String, Class<?>> extensionClasses, String dir) {
+    // fileName = 文件夹路径 + type 全限定名
+    String fileName = dir + type.getName();
+    try {
+        Enumeration<java.net.URL> urls;
+        ClassLoader classLoader = findClassLoader();
+        // 根据文件名加载所有的同名文件
+        if (classLoader != null) {
+            urls = classLoader.getResources(fileName);
+        } else {
+            urls = ClassLoader.getSystemResources(fileName);
+        }
+        if (urls != null) {
+            while (urls.hasMoreElements()) {
+                java.net.URL resourceURL = urls.nextElement();
+                // 加载资源
+                loadResource(extensionClasses, classLoader, resourceURL); // 核心
+            }
+        }
+    } catch (Throwable t) {
+        logger.error("Exception when load extension class(interface: " + type + ", description file: " + fileName + ").", t);
+    }
+}
+
+// Step 9
+private void loadResource(Map<String, Class<?>> extensionClasses, ClassLoader classLoader, java.net.URL resourceURL) {
+    try {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(resourceURL.openStream(), "utf-8"));
+        try {
+            String line;
+            // 按行读取配置内容
+            while ((line = reader.readLine()) != null) {
+                final int ci = line.indexOf('#');
+                if (ci >= 0) line = line.substring(0, ci);
+                line = line.trim();
+                if (line.length() > 0) {
+                    try {
+                        String name = null;
+                        int i = line.indexOf('=');
+                        if (i > 0) {
+                            // 以等于号 = 为界，截取键与值
+                            name = line.substring(0, i).trim();
+                            line = line.substring(i + 1).trim();
+                        }
+                        if (line.length() > 0) {
+                            // 加载类，并通过 loadClass 方法对类进行缓存
+                            loadClass(extensionClasses, resourceURL, Class.forName(line, true, classLoader), name); // 核心
+                        }
+                    } catch (Throwable t) {
+                        IllegalStateException e = new IllegalStateException("Failed to load extension class(interface: " + type + ", class line: " + line + ") in " + resourceURL + ", cause: " + t.getMessage(), t);
+                        exceptions.put(line, e);
+                    }
+                }
+            }
+        } finally {
+            reader.close();
+        }
+    } catch (Throwable t) {
+        logger.error("Exception when load extension class(interface: " + type + ", class file: " + resourceURL + ") in " + resourceURL, t);
+    }
+}
+
+// Step 10
+private void loadClass(Map<String, Class<?>> extensionClasses, java.net.URL resourceURL, Class<?> clazz, String name) throws NoSuchMethodException {
+    if (!type.isAssignableFrom(clazz)) {
+        throw new IllegalStateException("Error when load extension class(interface: " + type + ", class line: " + clazz.getName() + "), class " + clazz.getName() + "is not subtype of interface.");
+    }
+    // 检测目标类上是否有 Adaptive 注解
+    if (clazz.isAnnotationPresent(Adaptive.class)) {
+        if (cachedAdaptiveClass == null) {
+            // 设置 cachedAdaptiveClass 缓存
+            cachedAdaptiveClass = clazz;  // AdaptiveExtensionFactory
+        } else if (!cachedAdaptiveClass.equals(clazz)) {
+            throw new IllegalStateException("More than 1 adaptive class found: " + cachedAdaptiveClass.getClass().getName() + ", " + clazz.getClass().getName());
+        }
+        // 检测 clazz 是否是 Wrapper 类型
+    } else if (isWrapperClass(clazz)) {
+        Set<Class<?>> wrappers = cachedWrapperClasses;
+        if (wrappers == null) {
+            cachedWrapperClasses = new ConcurrentHashSet<Class<?>>();
+            wrappers = cachedWrapperClasses;
+        }
+        // 存储 clazz 到 cachedWrapperClasses 缓存中
+        wrappers.add(clazz);
+    } else {
+        // 检测 clazz 是否有默认的构造方法，如果没有，则抛出异常
+        clazz.getConstructor();
+        if (name == null || name.length() == 0) {
+            // 如果 name 为空，则尝试从 Extension 注解中获取 name，或使用小写的类名作为 name
+            name = findAnnotationName(clazz);
+            if (name.length() == 0) {
+                throw new IllegalStateException("No such extension name for the class " + clazz.getName() + " in the config " + resourceURL);
+            }
+        }
+        // 切分 name
+        String[] names = NAME_SEPARATOR.split(name);
+        if (names != null && names.length > 0) {
+            Activate activate = clazz.getAnnotation(Activate.class);
+            if (activate != null) {
+                // 如果类上有 Activate 注解，则使用 names 数组的第一个元素作为键，
+                // 存储 name 到 Activate 注解对象的映射关系
+                cachedActivates.put(names[0], activate);
+            }
+            for (String n : names) {
+                if (!cachedNames.containsKey(clazz)) {
+                    // 存储 Class 到名称的映射关系
+                    cachedNames.put(clazz, n);
+                }
+                Class<?> c = extensionClasses.get(n);
+                if (c == null) {
+                    // 存储名称到 Class 的映射关系
+                    extensionClasses.put(n, clazz);
+                } else if (c != clazz) {
+                    throw new IllegalStateException("Duplicate extension " + type.getName() + " name " + n + " on " + c.getName() + " and " + clazz.getName());
+                }
+            }
+        }
+    }
+}
+```
+
+通过上面的 Step 8、9、10 ，loadDirectory ---> loadResource ---> loadClass。
 
 
 

@@ -36,94 +36,94 @@ module.exports = {
 			text: '首页',
 			link: '/',
 		},
-			{
-				text: 'Java',
-				items: [
-					{
-						text: '基础', items: [
-							{text: '常用配置', link: '/01-java/config/'},
-							{text: '代码片段', link: '/01-java/snippet/'},
-							{text: 'jdk8', link: '/01-java/jdk8/'},
-							{text: 'jvm', link: '/01-java/jvm/'},
-							{text: '源码学习', link: '/01-java/src/'},
-						]
-					},
-					{
-						text: 'Framework', items: [
-							{text: 'Tomcat', link: '/01-java/Tomcat/'},
-							{text: 'Netty', link: '/01-java/bio&nio&netty/'},
-							{text: 'Spring', link: '/01-java/spring/'},
-							{text: 'Dubbo', link: '/01-java/dubbo/'},
-						]
-					}
-				]
-			},
-			{
-				text: '数据库',
-				items: [
-					{
-						text: '关系型', items: [
-							{text: 'MySQL', link: '/02-数据库/mysql/'},
-						]
-					},
-					{
-						text: '非关系型', items: [
-							{text: 'Redis', link: '/02-数据库/redis/'},
-							{text: 'MongoDB', link: '/02-数据库/mongodb/'},
-							{text: 'Elasticsearch', link: '/02-数据库/elasticsearch/'},
-						]
-					}
-				]
-			},
-			{
-				text: '前端',
-				items: [
-					{text: 'NodeJs', link: '/03-前端/node/'},
-					{text: 'Angular', link: '/03-前端/Angular/'},
-					{text: 'Vue', link: '/03-前端/vue/'},
-					{text: 'PM2', link: '/03-前端/pm2/'},
-					{text: 'other', link: '/03-前端/other/'},
-				]
-			},
-			{
-				text: '运维',
-				items: [
-					{text: 'Linux', link: '/04-运维/Linux/'},
-					{text: 'Nginx', link: '/04-运维/Nginx/'},
-					{text: 'Docker', link: '/04-运维/docker/'},
-					{text: '其他', link: '/04-运维/other/'},
-				]
-			},
-			{
-				text: 'python',
-				ariaLabel: 'python',
-				link: '/06-python/',
-			},
-			{
-				text: 'golang',
-				ariaLabel: 'golang',
-				link: '/07-golang/',
-			},
-			{
-				text: '大数据',
-				items: [
-					{text: 'Zookeeper', link: '/08-大数据/Zookeeper/'},
-					{text: 'Hadoop', link: '/08-大数据/Hadoop/'},
-					{text: 'Hbase', link: '/08-大数据/HBASE/'},
-					{text: 'kafka', link: '/08-大数据/kafka/'},
-					{text: 'Scala', link: '/08-大数据/scala/'}
-				]
-			},
-			{
-				text: '杂货铺',
-				ariaLabel: '杂货铺',
-				link: '/other/',
-			},
-			{
-				text: 'github',
-				link: 'https://github.com/chulei926',
-				target: '_blank'
-			}
+		{
+			text: 'Java',
+			items: [
+				{
+					text: '基础', items: [
+						{text: '常用配置', link: '/01-java/config/'},
+						{text: '代码片段', link: '/01-java/snippet/'},
+						{text: 'jdk8', link: '/01-java/jdk8/'},
+						{text: 'jvm', link: '/01-java/jvm/'},
+						{text: '源码学习', link: '/01-java/src/'},
+					]
+				},
+				{
+					text: 'Framework', items: [
+						{text: 'Tomcat', link: '/01-java/Tomcat/'},
+						{text: 'Netty', link: '/01-java/bio&nio&netty/'},
+						{text: 'Spring', link: '/01-java/spring/'},
+						{text: 'Dubbo', link: '/01-java/dubbo/'},
+					]
+				}
+			]
+		},
+		{
+			text: '数据库',
+			items: [
+				{
+					text: '关系型', items: [
+						{text: 'MySQL', link: '/02-数据库/mysql/'},
+					]
+				},
+				{
+					text: '非关系型', items: [
+						{text: 'Redis', link: '/02-数据库/redis/'},
+						{text: 'MongoDB', link: '/02-数据库/mongodb/'},
+						{text: 'Elasticsearch', link: '/02-数据库/elasticsearch/'},
+					]
+				}
+			]
+		},
+		{
+			text: '前端',
+			items: [
+				{text: 'NodeJs', link: '/03-前端/node/'},
+				{text: 'Angular', link: '/03-前端/Angular/'},
+				{text: 'Vue', link: '/03-前端/vue/'},
+				{text: 'PM2', link: '/03-前端/pm2/'},
+				{text: 'other', link: '/03-前端/other/'},
+			]
+		},
+		{
+			text: '运维',
+			items: [
+				{text: 'Linux', link: '/04-运维/Linux/'},
+				{text: 'Nginx', link: '/04-运维/Nginx/'},
+				{text: 'Docker', link: '/04-运维/docker/'},
+				{text: '其他', link: '/04-运维/other/'},
+			]
+		},
+		{
+			text: 'python',
+			ariaLabel: 'python',
+			link: '/06-python/',
+		},
+		{
+			text: 'golang',
+			ariaLabel: 'golang',
+			link: '/07-golang/',
+		},
+		{
+			text: '大数据',
+			items: [
+				{text: 'Zookeeper', link: '/08-大数据/Zookeeper/'},
+				{text: 'Hadoop', link: '/08-大数据/Hadoop/'},
+				{text: 'Hbase', link: '/08-大数据/HBASE/'},
+				{text: 'kafka', link: '/08-大数据/kafka/'},
+				{text: 'Scala', link: '/08-大数据/scala/'}
+			]
+		},
+		{
+			text: '杂货铺',
+			ariaLabel: '杂货铺',
+			link: '/other/',
+		},
+		{
+			text: 'github',
+			link: 'https://github.com/chulei926',
+			target: '_blank'
+		}
 		],
 		sidebarDepth: 6,
 		sidebar: {
