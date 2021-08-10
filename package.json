@@ -24,9 +24,11 @@
 	"homepage": "https://github.com/chulei926/chulei926.github.io",
 	"devDependencies": {
 		"@vuepress/plugin-google-analytics": "^1.8.0",
+		"v-dialogs": "^2.1.4",
 		"vuepress": "^1.8.0"
 	},
 	"dependencies": {
+		"js-md5": "^0.7.3",
 		"moment": "^2.29.1"
 	}
 }
