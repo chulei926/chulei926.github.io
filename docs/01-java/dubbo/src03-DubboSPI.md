@@ -520,7 +520,49 @@ private void loadClass(Map<String, Class<?>> extensionClasses, java.net.URL reso
 }
 ```
 
-通过上面的 Step 8、9、10 ，loadDirectory ---> loadResource ---> loadClass。
+通过上面的 `Step 8、9、10` ，实际流程其实就是：`loadDirectory` ---> `loadResource` ---> `loadClass`。下面再来具体分析下：
+- `loadDirectory`：按顺序加载扩展点，先加载 Dubbo 内部自带的（`META-INF/dubbo/internal/`）扩展点，再加载 用户自定义的（`META-INF/dubbo/internal/`） 扩展点。
+- `loadResource`：按行读取每个文件中的扩展点，然后进行实例化（`Class.forName(line, true, classLoader)`）,最后调用 `loadClass` 进行加载。
+- `loadClass`：正式加载各个扩展点并且加入对应的缓存。改方法也有几个核心步骤：
+    - 检测目标类上是否有 `Adaptive` 注解，如果有，设置 `cachedAdaptiveClass` 缓存，这一步确定了 **自适应扩展点**
+    - 监测目标类上是否是 `Wrapper` 类型，如果是，加入到 `cachedWrapperClasses` 缓存
+    - 最后，监测目标类是否有默认 构造器，如果没有抛出异常，这里可以说明一点，所有的扩展点都必须有个默认的构造器。接下来，有个非常重要的步骤，**获取激活的扩展点**，最后才是把扩展点的 name 和 Class 缓存起来。如下代码：
+```java
+Activate activate = clazz.getAnnotation(Activate.class);
+if (activate != null) {
+    // 如果类上有 Activate 注解，则使用 names 数组的第一个元素作为键，
+    // 存储 name 到 Activate 注解对象的映射关系
+    cachedActivates.put(names[0], activate);
+}dc
+```
+
+至此为止，扩展点加载完毕，先后加载了 `ExtensionFactory.class` 的扩展点、 `Color.class` 的扩展点、 并获取到对应的 激活的自适应扩展点。也就是前面提到的内置扩展点和自定义扩展点。
+```java
+// src/main/resources/META-INF/dubbo/internal/com.alibaba.dubbo.common.extension.ExtensionFactory 内置扩展点
+spring=com.alibaba.dubbo.config.spring.extension.SpringExtensionFactory
+adaptive=com.alibaba.dubbo.common.extension.factory.AdaptiveExtensionFactory
+spi=com.alibaba.dubbo.common.extension.factory.SpiExtensionFactory
+// src/main/resources/META-INF/dubbo/com.alibaba.dubbo.demo.model.dubbo_spi.Color 我自定义的
+black=com.alibaba.dubbo.demo.model.dubbo_spi.Black
+blue=com.alibaba.dubbo.demo.model.dubbo_spi.Blue
+red=com.alibaba.dubbo.demo.model.dubbo_spi.Red
+```
+
+注意：此时，只是加载了各个扩展点的类型，**并没有真正的实例化扩展点**。真正的实例化是在 首次获取自适应扩展点 的时候。
+```java
+ExtensionLoader<Color> extensionLoader = ExtensionLoader.getExtensionLoader(Color.class); // 这一步只是前奏
+final Color color = extensionLoader.getAdaptiveExtension(); // 在这一步中进行的实例化，回到上面的 Step 4，
+```
+
+`getAdaptiveExtension()` ---> `createAdaptiveExtension()` 方法的核心片段
+
+```java
+Class<?> clazz = getAdaptiveExtensionClass();
+T t = (T) clazz.newInstance(); // 实例化
+return injectExtension(t);
+```
+
+到这里，才完整的看到 自适应扩展点 的加载过程。这里只是简单的演示，真正的扩展点加载还是比较复杂的，虽然是演示，也能算得上 **窥一斑而知全豹**。
 
 
 
