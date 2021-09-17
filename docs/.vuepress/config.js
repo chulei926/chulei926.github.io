@@ -134,6 +134,7 @@ module.exports = {
             ],
             '/01-java/snippet/': [
                 '/01-java/snippet/动态加载jar包内的接口',
+                '/01-java/snippet/根据坐标点画图',
             ],
             '/01-java/jdk8/': [
                 '/01-java/jdk8/时间计算',
