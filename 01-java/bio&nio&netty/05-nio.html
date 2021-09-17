@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NIO | 好记性不如烂笔头</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="点点滴滴......">
+    
+    <link rel="preload" href="/assets/css/0.styles.cf7e09cc.css" as="style"><link rel="preload" href="/assets/js/app.02ff26cb.js" as="script"><link rel="preload" href="/assets/js/2.1d4421e5.js" as="script"><link rel="preload" href="/assets/js/17.741cfbb0.js" as="script"><link rel="prefetch" href="/assets/js/10.2612a63b.js"><link rel="prefetch" href="/assets/js/100.a48a180f.js"><link rel="prefetch" href="/assets/js/101.53f652c1.js"><link rel="prefetch" href="/assets/js/102.f941c746.js"><link rel="prefetch" href="/assets/js/103.e2c01416.js"><link rel="prefetch" href="/assets/js/104.db10e5e4.js"><link rel="prefetch" href="/assets/js/105.f64703cf.js"><link rel="prefetch" href="/assets/js/106.730f3f66.js"><link rel="prefetch" href="/assets/js/107.54511dfb.js"><link rel="prefetch" href="/assets/js/108.a62067f6.js"><link rel="prefetch" href="/assets/js/109.481f1a0c.js"><link rel="prefetch" href="/assets/js/11.803e259d.js"><link rel="prefetch" href="/assets/js/110.7b60026a.js"><link rel="prefetch" href="/assets/js/111.161406e0.js"><link rel="prefetch" href="/assets/js/112.fca5c042.js"><link rel="prefetch" href="/assets/js/113.3f8f95cc.js"><link rel="prefetch" href="/assets/js/114.db8f0937.js"><link rel="prefetch" href="/assets/js/115.262c0345.js"><link rel="prefetch" href="/assets/js/116.48b3a53a.js"><link rel="prefetch" href="/assets/js/117.d5dffc63.js"><link rel="prefetch" href="/assets/js/118.bf748590.js"><link rel="prefetch" href="/assets/js/119.3661e3b4.js"><link rel="prefetch" href="/assets/js/12.587a49fb.js"><link rel="prefetch" href="/assets/js/120.3b9af04e.js"><link rel="prefetch" href="/assets/js/121.07d65a74.js"><link rel="prefetch" href="/assets/js/122.2c55b5b6.js"><link rel="prefetch" href="/assets/js/123.d58733a7.js"><link rel="prefetch" href="/assets/js/124.fb4bb339.js"><link rel="prefetch" href="/assets/js/125.58dfb2a3.js"><link rel="prefetch" href="/assets/js/126.2a67695a.js"><link rel="prefetch" href="/assets/js/127.a78041c0.js"><link rel="prefetch" href="/assets/js/128.2983e5fa.js"><link rel="prefetch" href="/assets/js/129.8e49184d.js"><link rel="prefetch" href="/assets/js/13.05e41973.js"><link rel="prefetch" href="/assets/js/130.86d1a471.js"><link rel="prefetch" href="/assets/js/131.369ed59a.js"><link rel="prefetch" href="/assets/js/132.4a02b6ad.js"><link rel="prefetch" href="/assets/js/133.cc55147a.js"><link rel="prefetch" href="/assets/js/134.a630640a.js"><link rel="prefetch" href="/assets/js/135.266d4b52.js"><link rel="prefetch" href="/assets/js/136.2b913d1e.js"><link rel="prefetch" href="/assets/js/137.6cde93a7.js"><link rel="prefetch" href="/assets/js/138.fd2a41be.js"><link rel="prefetch" href="/assets/js/139.03960fc4.js"><link rel="prefetch" href="/assets/js/14.c08aeef1.js"><link rel="prefetch" href="/assets/js/140.57152984.js"><link rel="prefetch" href="/assets/js/141.85d648d0.js"><link rel="prefetch" href="/assets/js/142.bc367f2b.js"><link rel="prefetch" href="/assets/js/143.8659f21e.js"><link rel="prefetch" href="/assets/js/144.17d93cf7.js"><link rel="prefetch" href="/assets/js/145.c2a1734a.js"><link rel="prefetch" href="/assets/js/146.3bea7107.js"><link rel="prefetch" href="/assets/js/147.5191bc26.js"><link rel="prefetch" href="/assets/js/148.0b213fd3.js"><link rel="prefetch" href="/assets/js/149.b67b1a8c.js"><link rel="prefetch" href="/assets/js/15.b0532791.js"><link rel="prefetch" href="/assets/js/150.786fee79.js"><link rel="prefetch" href="/assets/js/151.c5f449a7.js"><link rel="prefetch" href="/assets/js/152.5179aa50.js"><link rel="prefetch" href="/assets/js/153.9d71a144.js"><link rel="prefetch" href="/assets/js/154.91a718e4.js"><link rel="prefetch" href="/assets/js/155.a35decd8.js"><link rel="prefetch" href="/assets/js/156.24bf2272.js"><link rel="prefetch" href="/assets/js/157.0d5c3349.js"><link rel="prefetch" href="/assets/js/158.a0b852ce.js"><link rel="prefetch" href="/assets/js/159.6f4f8566.js"><link rel="prefetch" href="/assets/js/16.eb74b9fc.js"><link rel="prefetch" href="/assets/js/160.3e6210d4.js"><link rel="prefetch" href="/assets/js/161.cbe1b2e4.js"><link rel="prefetch" href="/assets/js/162.7a7dbffe.js"><link rel="prefetch" href="/assets/js/163.2f363052.js"><link rel="prefetch" href="/assets/js/164.9396e5f5.js"><link rel="prefetch" href="/assets/js/165.5bc2c683.js"><link rel="prefetch" href="/assets/js/166.d407d438.js"><link rel="prefetch" href="/assets/js/167.b67b05d5.js"><link rel="prefetch" href="/assets/js/168.f2bb3219.js"><link rel="prefetch" href="/assets/js/169.84da5917.js"><link rel="prefetch" href="/assets/js/170.9defeadc.js"><link rel="prefetch" href="/assets/js/171.8558ceeb.js"><link rel="prefetch" href="/assets/js/172.27ab3775.js"><link rel="prefetch" href="/assets/js/173.8e2caed0.js"><link rel="prefetch" href="/assets/js/174.9789a06a.js"><link rel="prefetch" href="/assets/js/175.bad616a7.js"><link rel="prefetch" href="/assets/js/176.8aea3af4.js"><link rel="prefetch" href="/assets/js/177.ffb64381.js"><link rel="prefetch" href="/assets/js/178.79196e1e.js"><link rel="prefetch" href="/assets/js/179.b5eb5905.js"><link rel="prefetch" href="/assets/js/18.4a44f169.js"><link rel="prefetch" href="/assets/js/180.26ab9357.js"><link rel="prefetch" href="/assets/js/181.02dc4b39.js"><link rel="prefetch" href="/assets/js/182.9531c034.js"><link rel="prefetch" href="/assets/js/183.089abd3d.js"><link rel="prefetch" href="/assets/js/184.b4e5548b.js"><link rel="prefetch" href="/assets/js/185.3043b77e.js"><link rel="prefetch" href="/assets/js/186.4b71766a.js"><link rel="prefetch" href="/assets/js/187.5b075d35.js"><link rel="prefetch" href="/assets/js/188.9310608e.js"><link rel="prefetch" href="/assets/js/189.75347d4c.js"><link rel="prefetch" href="/assets/js/19.a4b90c6e.js"><link rel="prefetch" href="/assets/js/190.b0b40c7e.js"><link rel="prefetch" href="/assets/js/191.31fc85a1.js"><link rel="prefetch" href="/assets/js/192.0baa5723.js"><link rel="prefetch" href="/assets/js/193.a6a5d7af.js"><link rel="prefetch" href="/assets/js/194.9928bfb5.js"><link rel="prefetch" href="/assets/js/195.4f236cfe.js"><link rel="prefetch" href="/assets/js/196.a491a611.js"><link rel="prefetch" href="/assets/js/197.06248b7d.js"><link rel="prefetch" href="/assets/js/198.27883039.js"><link rel="prefetch" href="/assets/js/199.70f7d749.js"><link rel="prefetch" href="/assets/js/20.f62001e7.js"><link rel="prefetch" href="/assets/js/200.cbd0fbd8.js"><link rel="prefetch" href="/assets/js/201.06d814ed.js"><link rel="prefetch" href="/assets/js/202.d2b37a38.js"><link rel="prefetch" href="/assets/js/203.891bb359.js"><link rel="prefetch" href="/assets/js/204.43382f90.js"><link rel="prefetch" href="/assets/js/205.27f0c70a.js"><link rel="prefetch" href="/assets/js/206.c06459c5.js"><link rel="prefetch" href="/assets/js/207.e5aed09f.js"><link rel="prefetch" href="/assets/js/208.6c8af03b.js"><link rel="prefetch" href="/assets/js/209.bd1f9c26.js"><link rel="prefetch" href="/assets/js/21.3562d3d3.js"><link rel="prefetch" href="/assets/js/210.529d4422.js"><link rel="prefetch" href="/assets/js/211.a63631c3.js"><link rel="prefetch" href="/assets/js/212.fc77d568.js"><link rel="prefetch" href="/assets/js/213.1a02e45e.js"><link rel="prefetch" href="/assets/js/214.5ee9c099.js"><link rel="prefetch" href="/assets/js/215.9ff39c1a.js"><link rel="prefetch" href="/assets/js/216.3b4534b6.js"><link rel="prefetch" href="/assets/js/217.986feb3b.js"><link rel="prefetch" href="/assets/js/218.e95f7d08.js"><link rel="prefetch" href="/assets/js/219.1d05bf16.js"><link rel="prefetch" href="/assets/js/22.791a3b70.js"><link rel="prefetch" href="/assets/js/220.d38cf748.js"><link rel="prefetch" href="/assets/js/221.7a0d2305.js"><link rel="prefetch" href="/assets/js/23.a6390e10.js"><link rel="prefetch" href="/assets/js/24.15f0e4ae.js"><link rel="prefetch" href="/assets/js/25.2606ffab.js"><link rel="prefetch" href="/assets/js/26.c2c78091.js"><link rel="prefetch" href="/assets/js/27.e5e56c89.js"><link rel="prefetch" href="/assets/js/28.8eb6838b.js"><link rel="prefetch" href="/assets/js/29.c1bec995.js"><link rel="prefetch" href="/assets/js/3.d4d79f5a.js"><link rel="prefetch" href="/assets/js/30.8af808f7.js"><link rel="prefetch" href="/assets/js/31.e52b65d7.js"><link rel="prefetch" href="/assets/js/32.965ec6ed.js"><link rel="prefetch" href="/assets/js/33.1f6e42aa.js"><link rel="prefetch" href="/assets/js/34.6e9f4128.js"><link rel="prefetch" href="/assets/js/35.d91ff803.js"><link rel="prefetch" href="/assets/js/36.e61d3e6a.js"><link rel="prefetch" href="/assets/js/37.a4e611d2.js"><link rel="prefetch" href="/assets/js/38.ccc9d6f3.js"><link rel="prefetch" href="/assets/js/39.8608b7da.js"><link rel="prefetch" href="/assets/js/4.f41ae6ac.js"><link rel="prefetch" href="/assets/js/40.7c59b19a.js"><link rel="prefetch" href="/assets/js/41.590a7469.js"><link rel="prefetch" href="/assets/js/42.eb3aeb28.js"><link rel="prefetch" href="/assets/js/43.b64c90ff.js"><link rel="prefetch" href="/assets/js/44.98bed8f2.js"><link rel="prefetch" href="/assets/js/45.8826e61d.js"><link rel="prefetch" href="/assets/js/46.9bceeda9.js"><link rel="prefetch" href="/assets/js/47.f065a06b.js"><link rel="prefetch" href="/assets/js/48.7c56607f.js"><link rel="prefetch" href="/assets/js/49.1d37d6d2.js"><link rel="prefetch" href="/assets/js/5.e94f6fbf.js"><link rel="prefetch" href="/assets/js/50.1f1975f8.js"><link rel="prefetch" href="/assets/js/51.cc7be6a6.js"><link rel="prefetch" href="/assets/js/52.233e537c.js"><link rel="prefetch" href="/assets/js/53.3e3bb76c.js"><link rel="prefetch" href="/assets/js/54.0280fb6c.js"><link rel="prefetch" href="/assets/js/55.8b329502.js"><link rel="prefetch" href="/assets/js/56.d77fd488.js"><link rel="prefetch" href="/assets/js/57.3ca344a2.js"><link rel="prefetch" href="/assets/js/58.2d661ed6.js"><link rel="prefetch" href="/assets/js/59.5c502d91.js"><link rel="prefetch" href="/assets/js/6.1439bad9.js"><link rel="prefetch" href="/assets/js/60.57dd9a6d.js"><link rel="prefetch" href="/assets/js/61.117d3e5c.js"><link rel="prefetch" href="/assets/js/62.c9af0cf0.js"><link rel="prefetch" href="/assets/js/63.100ada63.js"><link rel="prefetch" href="/assets/js/64.2d39cca9.js"><link rel="prefetch" href="/assets/js/65.c258fe53.js"><link rel="prefetch" href="/assets/js/66.063768cf.js"><link rel="prefetch" href="/assets/js/67.48cc8fe4.js"><link rel="prefetch" href="/assets/js/68.0c97995d.js"><link rel="prefetch" href="/assets/js/69.f3bbc9a1.js"><link rel="prefetch" href="/assets/js/7.b73cdc82.js"><link rel="prefetch" href="/assets/js/70.4eece393.js"><link rel="prefetch" href="/assets/js/71.50c7f81a.js"><link rel="prefetch" href="/assets/js/72.06cb4218.js"><link rel="prefetch" href="/assets/js/73.629b59e6.js"><link rel="prefetch" href="/assets/js/74.d94d295f.js"><link rel="prefetch" href="/assets/js/75.ff67a5d5.js"><link rel="prefetch" href="/assets/js/76.39d3f3d3.js"><link rel="prefetch" href="/assets/js/77.719a41df.js"><link rel="prefetch" href="/assets/js/78.4b3f35c4.js"><link rel="prefetch" href="/assets/js/79.3951bc7d.js"><link rel="prefetch" href="/assets/js/8.50d6eed6.js"><link rel="prefetch" href="/assets/js/80.032c9956.js"><link rel="prefetch" href="/assets/js/81.2b7dae7c.js"><link rel="prefetch" href="/assets/js/82.094b3eb6.js"><link rel="prefetch" href="/assets/js/83.6cacd4fc.js"><link rel="prefetch" href="/assets/js/84.c1cf089a.js"><link rel="prefetch" href="/assets/js/85.3c0bad68.js"><link rel="prefetch" href="/assets/js/86.c6baa876.js"><link rel="prefetch" href="/assets/js/87.533ce502.js"><link rel="prefetch" href="/assets/js/88.aef39485.js"><link rel="prefetch" href="/assets/js/89.d0353977.js"><link rel="prefetch" href="/assets/js/9.fd60f076.js"><link rel="prefetch" href="/assets/js/90.cc69fcd9.js"><link rel="prefetch" href="/assets/js/91.5f3fbe08.js"><link rel="prefetch" href="/assets/js/92.252d52a6.js"><link rel="prefetch" href="/assets/js/93.274b0c49.js"><link rel="prefetch" href="/assets/js/94.9178043a.js"><link rel="prefetch" href="/assets/js/95.c5f98c00.js"><link rel="prefetch" href="/assets/js/96.7ea78c21.js"><link rel="prefetch" href="/assets/js/97.a9f10c4b.js"><link rel="prefetch" href="/assets/js/98.e8276e33.js"><link rel="prefetch" href="/assets/js/99.cd384db4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cf7e09cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="好记性不如烂笔头" class="logo"> <span class="site-name can-hide">好记性不如烂笔头</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/config/" class="nav-link">
+  常用配置
+</a></li><li class="dropdown-subitem"><a href="/01-java/snippet/" class="nav-link">
+  代码片段
+</a></li><li class="dropdown-subitem"><a href="/01-java/jdk8/" class="nav-link">
+  jdk8
+</a></li><li class="dropdown-subitem"><a href="/01-java/jvm/" class="nav-link">
+  jvm
+</a></li><li class="dropdown-subitem"><a href="/01-java/src/" class="nav-link">
+  源码学习
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Framework
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/01-java/bio&amp;nio&amp;netty/" class="nav-link router-link-active">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/01-java/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/01-java/dubbo/" class="nav-link">
+  Dubbo
+</a></li><li class="dropdown-subitem"><a href="/01-java/cas/" class="nav-link">
+  CAS
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/mysql/" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03-前端/node/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/Angular/" class="nav-link">
+  Angular
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/pm2/" class="nav-link">
+  PM2
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/other/" class="nav-link">
+  other
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/04-运维/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/other/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/06-python/" class="nav-link">
+  python
+</a></div><div class="nav-item"><a href="/07-golang/" class="nav-link">
+  golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/08-大数据/Zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/Hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/HBASE/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/kafka/" class="nav-link">
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/scala/" class="nav-link">
+  Scala
+</a></li></ul></div></div><div class="nav-item"><a href="/other/" class="nav-link">
+  杂货铺
+</a></div><div class="nav-item"><a href="https://github.com/chulei926" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/config/" class="nav-link">
+  常用配置
+</a></li><li class="dropdown-subitem"><a href="/01-java/snippet/" class="nav-link">
+  代码片段
+</a></li><li class="dropdown-subitem"><a href="/01-java/jdk8/" class="nav-link">
+  jdk8
+</a></li><li class="dropdown-subitem"><a href="/01-java/jvm/" class="nav-link">
+  jvm
+</a></li><li class="dropdown-subitem"><a href="/01-java/src/" class="nav-link">
+  源码学习
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Framework
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/01-java/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/01-java/bio&amp;nio&amp;netty/" class="nav-link router-link-active">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/01-java/spring/" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/01-java/dubbo/" class="nav-link">
+  Dubbo
+</a></li><li class="dropdown-subitem"><a href="/01-java/cas/" class="nav-link">
+  CAS
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/mysql/" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          非关系型
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/02-数据库/redis/" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-subitem"><a href="/02-数据库/elasticsearch/" class="nav-link">
+  Elasticsearch
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/03-前端/node/" class="nav-link">
+  NodeJs
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/Angular/" class="nav-link">
+  Angular
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/pm2/" class="nav-link">
+  PM2
+</a></li><li class="dropdown-item"><!----> <a href="/03-前端/other/" class="nav-link">
+  other
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/04-运维/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/docker/" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/04-运维/other/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/06-python/" class="nav-link">
+  python
+</a></div><div class="nav-item"><a href="/07-golang/" class="nav-link">
+  golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大数据" class="dropdown-title"><span class="title">大数据</span> <span class="arrow down"></span></button> <button type="button" aria-label="大数据" class="mobile-dropdown-title"><span class="title">大数据</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/08-大数据/Zookeeper/" class="nav-link">
+  Zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/Hadoop/" class="nav-link">
+  Hadoop
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/HBASE/" class="nav-link">
+  Hbase
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/kafka/" class="nav-link">
+  kafka
+</a></li><li class="dropdown-item"><!----> <a href="/08-大数据/scala/" class="nav-link">
+  Scala
+</a></li></ul></div></div><div class="nav-item"><a href="/other/" class="nav-link">
+  杂货铺
+</a></div><div class="nav-item"><a href="https://github.com/chulei926" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/01-java/bio&amp;nio&amp;netty/01-bio-demo.html" class="sidebar-link">BIO-demo</a></li><li><a href="/01-java/bio&amp;nio&amp;netty/02-nio-demo.html" class="sidebar-link">NIO-demo</a></li><li><a href="/01-java/bio&amp;nio&amp;netty/03-nio-group_chat-demo.html" class="sidebar-link">NIO-Chat-demo</a></li><li><a href="/01-java/bio&amp;nio&amp;netty/04-IO模型.html" class="sidebar-link">IO模型</a></li><li><a href="/01-java/bio&amp;nio&amp;netty/05-nio.html" aria-current="page" class="active sidebar-link">NIO</a></li><li><a href="/01-java/bio&amp;nio&amp;netty/06-nio-Scatter&amp;Gather.html" class="sidebar-link">Scatter&amp;Gather</a></li><li><a href="/01-java/bio&amp;nio&amp;netty/07-Reactor模式.html" class="sidebar-link">Reactor模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nio"><a href="#nio" class="header-anchor">#</a> NIO</h1> <h2 id="_1、nio-概述"><a href="#_1、nio-概述" class="header-anchor">#</a> 1、NIO 概述</h2> <p>Java NIO(non-blocking IO)是一个可以替代标准Java IO API的IO API（从Java 1.4开始)，Java NIO提供了与标准IO不同的IO工作方式。</p> <h2 id="_2、三大核心"><a href="#_2、三大核心" class="header-anchor">#</a> 2、三大核心</h2> <p><strong>Channel</strong>(通道)，<strong>Buffer</strong>(缓冲区), <strong>Selector</strong>(选择器)</p> <p><img src="/images/netty/overview-channels-buffers.png" alt="overview-channels-buffers"></p> <h2 id="_2-1-channel"><a href="#_2-1-channel" class="header-anchor">#</a> 2.1 channel</h2> <p>Java NIO的通道类似流，但又有些不同：</p> <ul><li>既可以从通道中读取数据，又可以写数据到通道。但流的读写通常是单向的。</li> <li>通道可以异步地读写。</li> <li>通道中的数据总是要先读到一个Buffer，或者总是要从一个Buffer中写入。</li></ul> <h3 id="主要实现类"><a href="#主要实现类" class="header-anchor">#</a> 主要实现类：</h3> <ul><li>FileChannel：           从文件中读写数据。</li> <li>DatagramChannel：       能通过UDP读写网络中的数据。</li> <li>SocketChannel：         能通过TCP读写网络中的数据。</li> <li>ServerSocketChannel：   可以监听新进来的TCP连接，像Web服务器那样。对每一个新进来的连接都会创建一个SocketChannel。</li></ul> <p><img src="/images/netty/Channel.png" alt="Channel"></p> <h2 id="_2-2-buffer-的常用实现"><a href="#_2-2-buffer-的常用实现" class="header-anchor">#</a> 2.2 Buffer 的常用实现</h2> <p>Java NIO中的Buffer用于和NIO通道进行交互。
+缓冲区本质上是一块可以写入数据，然后可以从中读取数据的内存。
+这块内存被包装成NIO Buffer对象，并提供了一组方法，用来方便的访问该块内存。</p> <h3 id="_2-2-1-基本用法"><a href="#_2-2-1-基本用法" class="header-anchor">#</a> 2.2.1 基本用法</h3> <ul><li>写入数据到Buffer</li> <li>调用flip()方法</li> <li>从Buffer中读取数据</li> <li>调用 clear() 方法或者 compact() 方法</li></ul> <p>当向buffer写入数据时，buffer会记录下写了多少数据。一旦要读取数据，需要通过flip()方法将Buffer从写模式切换到读模式。在读模式下，可以读取之前写入到buffer的所有数据。</p> <p>一旦读完了所有的数据，就需要清空缓冲区，让它可以再次被写入。有两种方式能清空缓冲区：调用clear()或compact()方法。<strong>clear()方法会清空整个缓冲区</strong>。<strong>compact()方法只会清除已经读过的数据</strong>。任何未读的数据都被移到缓冲区的起始处，新写入的数据将放到缓冲区未读数据的后面。</p> <h3 id="_2-2-2-buffer的capacity、position、limit"><a href="#_2-2-2-buffer的capacity、position、limit" class="header-anchor">#</a> 2.2.2 Buffer的capacity、position、limit</h3> <p>缓冲区本质上是一块可以写入数据，然后可以从中读取数据的内存。这块内存被包装成NIO Buffer对象，并提供了一组方法，用来方便的访问该块内存。</p> <p>position 和 limit 的含义取决于 Buffer 处于读模式还是写模式。
+不管 Buffer 处在什么模式， capacity 的含义是一样的。</p> <p><img src="/images/netty/buffers-modes.png" alt="buffers-modes"></p> <ul><li>capacity：
+<ul><li>作为一个内存块，Buffer 的大小有一个固定值，也叫“capacity”。</li></ul></li> <li>position：
+<ul><li>当写数据到 Buffer 时，position 表示当前的位置。初始的 position=0。当一个 byte、int 等数据写入到 Buffer 后，position 会向前移动到下一个可插入数据的 Buffer 单元。position 最大可为 capacity-1。</li> <li>当读取数据时，也是从某个特定位置读取。当将 Buffer 从写模式切换到 读模式时，position 会被重置为0。当从 Buffer 的 position 处读取数据时，position 向后移动到下一个可读的位置。</li></ul></li> <li>limit
+<ul><li>在写模式下， Buffer 的 limit 表示最多能往 Buffer 中写多少数据。写模式下，limit 等于 capacity。</li> <li>当切换到读模式时，limit 表示你最多能读到多少数据。因此，当切换 Buffer 到读模式时，limit 会被切换成写模式下的 position值。（换句话说，可以读到之前写入的所有数据）</li></ul></li></ul> <h3 id="_2-2-3-主要实现类"><a href="#_2-2-3-主要实现类" class="header-anchor">#</a> 2.2.3 主要实现类：</h3> <ul><li>ByteBuffer</li> <li>CharBuffer</li> <li>DoubleBuffer</li> <li>FloatBuffer</li> <li>IntBuffer</li> <li>LongBuffer</li> <li>ShortBuffer</li> <li>MappedByteBuffer</li></ul> <p><img src="/images/netty/Buffer.png" alt="Buffer"></p> <h2 id="_2-3-selector"><a href="#_2-3-selector" class="header-anchor">#</a> 2.3 Selector</h2> <p>Selector允许单线程处理多个 Channel。如果你的应用打开了多个连接（通道），但每个连接的流量都很低，使用Selector就会很方便。</p> <p><img src="/images/netty/overview-selectors.png" alt="overview-selectors"></p> <h3 id="_2-3-1-为什么使用-selector"><a href="#_2-3-1-为什么使用-selector" class="header-anchor">#</a> 2.3.1 为什么使用 selector ？</h3> <p>仅用单个线程来处理多个 channel 的好处是，只需要更少的线程来处理通道。事实上，可以只用一个线程处理所有的通道。对于操作系统来说，线程之间的上下文切换开销很大，而且每个现场都要占用系统的一些资源（如内存）。因此，使用的线程越少越好。</p> <p>但是，现代的操作系统和CPU在多任务方面表现的越来越好，所以多线程的开销随着时间的推移，变得越来越小。实际上，如果一个CPU有多个内核，不使用多任务可能是在浪费CPU能力。</p> <h3 id="_2-3-2-selector-的使用"><a href="#_2-3-2-selector-的使用" class="header-anchor">#</a> 2.3.2 selector 的使用</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// Selector的创建</span>
+
+<span class="token class-name">Selector</span> selector <span class="token operator">=</span> <span class="token class-name">Selector</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// 与Selector一起使用时，Channel必须处于非阻塞模式下。</span>
+<span class="token comment">// 这意味着不能将FileChannel与Selector一起使用，因为FileChannel不能切换到非阻塞模式。而套接字通道都可以。</span>
+
+channel<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 向Selector注册通道</span>
+
+<span class="token class-name">SelectionKey</span> key <span class="token operator">=</span> channel<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">Selectionkey</span><span class="token punctuation">.</span>OP_READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 注意register()方法的第二个参数。这是一个“ interest 集合 ”，意思是在通过Selector监听Channel时对什么事件感兴趣。
+ * 可以监听四种不同类型的事件：
+ * 
+ * 1. SelectionKey.OP_CONNECT
+ * 2. SelectionKey.OP_ACCEPT
+ * 3. SelectionKey.OP_READ
+ * 4. SelectionKey.OP_WRITE
+ *
+ */</span>
+ 
+ <span class="token comment">// 如果对不止一种事件感兴趣，那么可以用“位或”操作符将常量连接起来，如下：</span>
+ <span class="token keyword">int</span> interestSet <span class="token operator">=</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_READ <span class="token operator">|</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_WRITE<span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="_2-3-3-selectionkey"><a href="#_2-3-3-selectionkey" class="header-anchor">#</a> 2.3.3 SelectionKey</h3> <p>在将 channel 注册到 selector时, register()方法返回了 selectionKey。<code>SelectionKey key = channel.register(selector, Selectionkey.OP_READ);</code></p> <p>通过 SelectionKey 可以反向获取到 selector 和 channel，一些感兴趣的属性，以及一些附加对象。比如：</p> <ul><li>interest集合：interest集合是你所选择的感兴趣的事件集合。可以通过SelectionKey读写interest集合。</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">int</span> interestSet <span class="token operator">=</span> selectionKey<span class="token punctuation">.</span><span class="token function">interestOps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">boolean</span> isInterestedInAccept  <span class="token operator">=</span> <span class="token punctuation">(</span>interestSet <span class="token operator">&amp;</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_ACCEPT<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_ACCEPT；
+<span class="token keyword">boolean</span> isInterestedInConnect <span class="token operator">=</span> interestSet <span class="token operator">&amp;</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_CONNECT<span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> isInterestedInRead    <span class="token operator">=</span> interestSet <span class="token operator">&amp;</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_READ<span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> isInterestedInWrite   <span class="token operator">=</span> interestSet <span class="token operator">&amp;</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_WRITE<span class="token punctuation">;</span>
+
+<span class="token comment">// 可以看到，用“位与”操作interest 集合和给定的SelectionKey常量，可以确定某个确定的事件是否在interest 集合中。</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>ready集合：ready 集合是通道已经准备就绪的操作的集合。在一次选择(Selection)之后，你会首先访问这个ready set。</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">int</span> readySet <span class="token operator">=</span> selectionKey<span class="token punctuation">.</span><span class="token function">readyOps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 可以用像检测interest集合那样的方法，来检测channel中什么事件或操作已经就绪。</span>
+<span class="token comment">// 但是，也可以使用以下四个方法，它们都会返回一个布尔类型：</span>
+
+selectionKey<span class="token punctuation">.</span><span class="token function">isAcceptable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+selectionKey<span class="token punctuation">.</span><span class="token function">isConnectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+selectionKey<span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+selectionKey<span class="token punctuation">.</span><span class="token function">isWritable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>附加对象：可以将一个对象或者更多信息附着到SelectionKey上，这样就能方便的识别某个给定的通道。例如，可以附加与通道一起使用的Buffer，或是包含聚集数据的某个对象。使用方法如下：</li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code>selectionKey<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span>theObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Object</span> attachedObj <span class="token operator">=</span> selectionKey<span class="token punctuation">.</span><span class="token function">attachment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 还可以在用register()方法向Selector注册Channel的时候附加对象。如：</span>
+<span class="token class-name">SelectionKey</span> key <span class="token operator">=</span> channel<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_READ<span class="token punctuation">,</span> theObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="_2-3-4-通过-selector-选择通道"><a href="#_2-3-4-通过-selector-选择通道" class="header-anchor">#</a> 2.3.4 通过 Selector 选择通道</h3> <p>一旦向 selector 注册了一个或多个通道，就可以调用几个重载的 select() 方法，返回感兴趣的事件（如：连接、接收、读、写）已经准备就绪的哪些通道。</p> <p>换句话说，如果对“读就绪”的通道感兴趣， select() 方法 会返回读事件已经就绪的那些通道。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * 阻塞到至少有一个通道在你注册的事件上就绪了。
+ * 返回值表示 有多少个通道已经就绪。也表示 从上次调用 select() 方法之后 有多少 通道变成了就绪状态。
+ */</span>
+<span class="token keyword">int</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">/**
+ * 和 select() 方法一样，除了最长会阻塞 timeout 毫秒。
+ */</span>
+<span class="token keyword">int</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token keyword">long</span> timeout<span class="token punctuation">)</span>
+
+<span class="token comment">/**
+ * 不会阻塞，不管什么通道就绪都理解返回。
+ */</span>
+<span class="token keyword">int</span> <span class="token function">selectNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="_2-3-5-selectedkeys"><a href="#_2-3-5-selectedkeys" class="header-anchor">#</a> 2.3.5 selectedKeys()</h3> <p>一旦调用了 select() 方法，并且返回值表明有一个或多个通道就绪，然后可以通过调用 selector 的 selectedKeys() 方法，访问 “已选择键集” 中的就绪通道。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">Set</span> selectedKeys <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">selectedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>当向 selector 注册到 channel 时，Channel.register()方法会返回一个SelectionKey 对象。
+这个对象代表了注册到该 Selector 的通道。可以通过SelectionKey的selectedKeySet()方法访问这些对象。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 可以遍历这个已选择的键集合来访问就绪的通道。如下：</span>
+<span class="token class-name">Set</span> selectedKeys <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">selectedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Iterator</span> keyIterator <span class="token operator">=</span> selectedKeys<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>keyIterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">SelectionKey</span> key <span class="token operator">=</span> keyIterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isAcceptable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a connection was accepted by a ServerSocketChannel.</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isConnectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a connection was established with a remote server.</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a channel is ready for reading</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isWritable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a channel is ready for writing</span>
+    <span class="token punctuation">}</span>
+    keyIterator<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>这个循环遍历已选择键集中的每个键，并检测各个键所对应的通道就绪事件。</p> <p>注意每次迭代默认的 <code>keyIterator.remove();</code>调用，Selector不会自己从已选择键集中移除SelectionKey实例。必须在处理完通道时自己移除。下次该通道变成就绪时，Selector会再次将其放入已选择键集中。</p> <p>SelectionKey.channel()方法返回的通道需要转型成你要处理的类型，如ServerSocketChannel或SocketChannel等。</p> <h3 id="_2-3-6-wakeup"><a href="#_2-3-6-wakeup" class="header-anchor">#</a> 2.3.6 wakeUp()</h3> <p>某个线程调用select()方法后阻塞了，即使没有通道已经就绪，也有办法让其从select()方法返回。只要让其它线程在第一个线程调用select()方法的那个对象上调用Selector.wakeup()方法即可。阻塞在select()方法上的线程会立马返回。</p> <p>如果有其它线程调用了wakeup()方法，但当前没有线程阻塞在 select() 方法上，下个调用 select() 方法的线程会立即 醒来（wake up）。</p> <h3 id="_2-3-7-close"><a href="#_2-3-7-close" class="header-anchor">#</a> 2.3.7 close()</h3> <p>用完 Selector 后调用其 close() 方法会关闭该 Selector，且使注册到该 Selector 上的所有 SelectionKey 实例无效。通道本身并不会关闭。</p> <h3 id="_2-3-8-完整实例"><a href="#_2-3-8-完整实例" class="header-anchor">#</a> 2.3.8 完整实例</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">Selector</span> selector <span class="token operator">=</span> <span class="token class-name">Selector</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+channel<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">SelectionKey</span> key <span class="token operator">=</span> channel<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span>OP_READ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> readyChannels <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>readyChannels <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+  <span class="token class-name">Set</span> selectedKeys <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">selectedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Iterator</span> keyIterator <span class="token operator">=</span> selectedKeys<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>keyIterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">SelectionKey</span> key <span class="token operator">=</span> keyIterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isAcceptable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a connection was accepted by a ServerSocketChannel.</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isConnectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a connection was established with a remote server.</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a channel is ready for reading</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isWritable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// a channel is ready for writing</span>
+    <span class="token punctuation">}</span>
+    keyIterator<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2021-04-28 08:44:23</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/01-java/bio&amp;nio&amp;netty/04-IO模型.html" class="prev">
+        IO模型
+      </a></span> <span class="next"><a href="/01-java/bio&amp;nio&amp;netty/06-nio-Scatter&amp;Gather.html">
+        Scatter&amp;Gather
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.02ff26cb.js" defer></script><script src="/assets/js/2.1d4421e5.js" defer></script><script src="/assets/js/17.741cfbb0.js" defer></script>
+  </body>
+</html>
